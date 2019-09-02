@@ -1,0 +1,11 @@
+.title{height: 40px;}
+.centerDiv{padding: 40px auto;}
+.chooseDiv p>span{display: inline-block;width: 60px;}
+.personArea{text-align: center;font-size: 30px;}
+.chooseDiv .personArea span{display: inline-block;width: auto;}
+.chooseDiv p input{margin: 0 20px;}
+#searchBtn{margin-left: 20px;border: none;background-color: #29e;color: #fff;}
+.tongjiDiv{margin: 20px;display: none;}
+.tongjiDiv p{text-align: center;}
+.tongjiDiv p span:nth-child(1){display: inline-block;width: 180px;font-size: 20px;}
+.tongjiDiv p span:nth-child(2){display: inline-block;width: 300px;color: #969aa3;font-size: 20px;}

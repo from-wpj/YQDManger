@@ -1,0 +1,2688 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<link rel="icon" href="../image/logo.png" type="image/x-icon"/>
+		<link rel="stylesheet" href="../css/reset.css"/>
+		<link rel="stylesheet" href="../css/skin/default/layer.css"/>
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css"/>
+		<link rel="stylesheet" href="../css/skin/default/layer.css"/>
+		<link rel="stylesheet" href="../css/theme/default/laydate.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/selectivity-jquery.css"/>
+		<link rel="stylesheet" href="../css/jquery.page.css"/>
+		<link rel="stylesheet" href="../css/upFile.css"/>
+		<link rel="stylesheet" href="../css/bootstrap-select.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/tab2.css"/>
+		<link rel="stylesheet" href="../css/mangerLogined.css?ver=20190321"/>
+		<title>易企点平台管理</title>
+	</head>
+	<body onload="load()">
+		<div class="cover">	</div>
+		<div class="nav clearfix">
+			<div class="navLeft col-lg-2 col-md-2 col-sm-2 col-xs-2">	</div>
+			<ul class="clearfix col-lg-8 col-md-8 col-sm-8 col-xs-8 contain">
+				<li class="pull-left" id="mangerCon">注册信息</li>
+				<li class="pull-left" id="zhaopin">查询账号</li>
+				<!-- <li class="pull-left" id="zhaopin">招聘</li> -->
+				<li class="pull-left" id="zhanghao">账号管理</li>
+				<li class="pull-left" id="shoufei">模块管理</li>
+			</ul>
+			<div class="navRight col-lg-2 col-md-2 col-sm-2 col-xs-2">
+				<a href="http://www.eqidd.com/Friend/chart/chart.html" style="cursor: pointer;">平台数据</a>
+				<span class="loginName">	</span>
+				<a class="quitOut">退出</a>
+			</div>
+		</div>
+		<div>
+			<div class="main" id="mangerLook">
+				<div class="mainLeft">
+					<p class="lookManger" id="lookManger">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						个人注册查询
+					</p>
+					<p class="comConform">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						企业注册查询
+					</p>
+					<p class="regFastCompany">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						企业快速注册查询
+					</p>
+					<p class="comTeacher">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						讲师认证申请
+					</p>
+					<p class="regCounts">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						批量注册账号
+					</p>
+				</div>
+				<div class="mainRight">
+					<div class="lookMangerDet">
+						<div class="chooseTime">
+							<input type="text" id="test4" placeholder="请选择时间" autoComplete='off'/>
+							<span class="time1">
+								<span class="glyphicon glyphicon-calendar">	</span>
+							</span>
+							<div id="result">	</div>
+							<button class="downBtn">导出</button>
+							<!-- <button class="choose">高级搜索</button> -->
+						</div>
+						<div class="col-lg-12">
+							<table id="chakanRegTable">
+								<thead>
+									<tr>	</tr>
+								</thead>
+							</table>
+							<br/>
+							<p class="clearfix btnArea3">
+								<button class="personBtnPrve2 pull-left">上一页</button>
+								<button class="personBtnNext2 pull-right">下一页</button>
+							</p>
+						</div>
+					</div>
+					<div class="lookCompanyDet">
+						<div class="chooseTime2">
+							<input type="text" id="test5" placeholder="请选择时间"/>
+							<span class="time2">
+								<span class="glyphicon glyphicon-calendar">	</span>
+							</span>
+							<button class="lookComBtn">查看</button>
+							<button class="downComBtn">导出</button>
+						</div>
+						<div>
+							<table id="chakanRegComTable">
+								<thead>
+									<tr>
+										<th data-field="com_name">公司名称</th>
+										<th data-field="com_contact">联系方式</th>
+										<th data-field="com_adress">公司地址</th>
+										<th data-field="com_hangye">所属行业</th>
+										<th data-field="com_dutyman">公司法人</th>
+										<th data-field="com_dutytel">法人电话</th>
+										<th data-field="com_dutyIDnum">法人身份证号</th>
+										<th data-field="com_emai">公司邮箱</th>
+										<th data-field="createTime">注册时间</th>
+										<th data-field="staffName">注册人姓名</th>
+										<th data-field="uname">注册人手机号</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+						</div>
+					</div>
+					<div class="comConformDet">
+						<div class="chooseTime3">
+							<select name="" id="test6">
+								<option value="0">待审核</option>
+								<option value="1">已审核</option>
+							</select>
+							<span class="time3">
+								<span class="glyphicon glyphicon-calendar">	</span>
+							</span>
+							<button class="downConformBtn">导出</button>
+						</div>
+						<div class="col-lg-12">
+							<table id="comConformTable">
+								<thead>
+									<tr>
+										<th data-field="com_name">公司名称</th>
+										<th data-field="createName">注册人姓名</th>
+										<th data-field="createrPhone">注册人电话</th>
+										<th data-field="createTime">注册时间</th>
+										<th data-field="com_type">企业性质</th>
+										<th data-field="com_adress">注册地址</th>
+										<th data-field="more">查看详情</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+							<p class="clearfix btnArea2">
+								<button class="comBtnPrve pull-left">上一页</button>
+								<button class="comBtnNext pull-right">下一页</button>
+							</p>
+						</div>
+					</div>
+					<!-- 企业快速注册审批 -->
+					<div class="regFastCompanyDiv">
+						<div class="chooseTime3">
+							<select name="" id="testFast">
+								<option value="0">待审核</option>
+								<option value="1">已同意</option>
+								<option value="-1">已拒绝</option>
+							</select>
+						</div>
+						<div class="col-lg-12">
+							<table id="fastRegTable">
+								<thead>
+									<tr>
+										<th data-field="comName">	</th>
+										<th data-field="phone">	</th>
+										<th data-field="creatTime">	</th>
+										<th data-field="more">	</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+							<p class="clearfix btnArea2">
+								<button class="comBtnPrve2 pull-left">上一页</button>
+								<button class="comBtnNext2 pull-right">下一页</button>
+							</p>
+						</div>
+						<div class="checkFastRegDiv">
+							<p>
+								<span>公司全称 :</span>
+								<span class="fastCompanyName">	</span>
+							</p>
+							<p>
+								<span>手机号 :</span>
+								<span class="fastPhone">	</span>
+							</p>
+							<img src=" " alt=""/>
+							<p class="fastbtnArea">
+								<button class="fastRefuseBtn">拒绝</button>
+								<button class="fastAgreeBtn">同意</button>
+							</p>
+						</div>
+					</div>
+					<!-- 讲师申请 -->
+					<div class="teacherApply">
+						<div class="chooseTime4">
+							<select name="" id="test7">
+								<option value="0">待审核</option>
+								<option value="1">已审核</option>
+							</select>
+						</div>
+						<div class="col-lg-12">
+							<table id="teacherApplyTable">
+								<thead>
+									<tr>
+										<th data-field="lectureImage">	</th>
+										<th data-field="realName">	</th>
+										<th data-field="sex">	</th>
+										<th data-field="phone">	</th>
+										<th data-field="province">	</th>
+										<th data-field="city">	</th>
+										<th data-field="createTime">	</th>
+										<th data-field="option">	</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+							<p class="clearfix btnArea4">
+								<button class="teaBtnPrve pull-left">上一页</button>
+								<button class="teaBtnNext pull-right">下一页</button>
+							</p>
+						</div>
+						<!-- 讲师详情 -->
+						<div class="teacherDetailsDiv form-inline">
+							<form action="">
+								<p>资质照片</p>
+								<div class="teaImgShow">	</div>
+								<label for="">
+									<span>姓名</span>
+									<span class="teaName">	</span>
+								</label>
+								<label for="">
+									<span>性别</span>
+									<span class="teaSex">	</span>
+								</label>
+								<label for="">
+									<span>手机</span>
+									<span class="teaPhone">	</span>
+								</label>
+								<label for="">
+									<span>邮箱</span>
+									<span class="teaEmail">	</span>
+								</label>
+								<label for="">
+									<span>助理</span>
+									<span class="teaAssistant">	</span>
+								</label>
+								<label for="">
+									<span>助理手机</span>
+									<span class="assistantPhone">	</span>
+								</label>
+								<label for="">
+									<span>所在地</span>
+									<span class="address">	</span>
+								</label>
+								<label for="">
+									<span>费用</span>
+									<span class="expevse">	</span>
+								</label>
+								<label for="">
+									<span>研究领域</span>
+									<span class="teaResearchField">	</span>
+								</label>
+								<p>讲师简介</p>
+								<div class="teaInfoDiv">	</div>
+								<hr/>
+								<p>客户案例</p>
+								<div class="guestExample">	</div>
+								<hr/>
+								<p>服务过的企业</p>
+								<div class="serveredCompany">	</div>
+							</form>
+						</div>
+						<!-- 拒绝讲师申请 -->
+						<div class="refuseDiv">
+							<span>拒绝理由</span>
+							<textarea name="" id="refuseReason" cols="70" rows="5" class="form-control">	</textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="companyDetails">
+				<div class="photos">
+					<div class="pull-left">
+						<div class="photo IDcardfront pull-left">
+							<img src=" " alt=""/>
+							<p>身份证正面照</p>
+						</div>
+						<div class="photo IDcardback pull-left">
+							<img src=" " alt=""/>
+							<p>身份证反面照</p>
+						</div>
+					</div>
+					<div class="pull-left">
+						<div class="photo IDcardhand pull-left">
+							<img src=" " alt=""/>
+							<p>手持身份证照</p>
+						</div>
+						<div class="photo buslicense pull-left">
+							<img src=" " alt=""/>
+							<p>营业执照</p>
+						</div>
+					</div>
+					<div class="cleafix">
+						<div class="photo codecertifi pull-left">
+							<img src=" " alt=""/>
+							<p>企业《组织机构代码证》照</p>
+						</div>
+						<div class="photo productcertifi pull-left">
+							<img src=" " alt=""/>
+							<p>生产许可证照</p>
+						</div>
+					</div>
+					<div class="clearfix">
+						<div class="photo tax pull-left">
+							<img src=" " alt=""/>
+							<p>税务登记证</p>
+						</div>
+					</div>
+				</div>
+				<div class="companyShow clearfix">
+					<p class="pull-left">
+						<span>公司名称</span>
+						<span class="comName">	</span>
+					</p>
+					<p class="pull-left">
+						<span>企业性质</span>
+						<span class="com_type">	</span>
+					</p>
+					<p class="pull-left">
+						<span>公司地址</span>
+						<span class="conAddress">	</span>
+					</p>
+					<p class="pull-left">
+						<span>注册时间</span>
+						<span class="creatDate">	</span>
+					</p>
+					<p class="pull-left">
+						<span>注册人姓名</span>
+						<span class="regName">	</span>
+					</p>
+					<p class="pull-left">
+						<span>注册人电话</span>
+						<span class="regTel">	</span>
+					</p>
+				</div>
+				<div class="checkArea clearfix">
+					<p class="pull-left">
+						<button class="refuse">拒绝</button>
+					</p>
+					<p class="pull-left">
+						<button class="agree">同意</button>
+					</p>
+					<textarea name="" id="message" class="form-control" placeholder="输入同意/拒绝的理由(简洁)">	</textarea>
+				</div>
+				<div class="pass">
+					<p>该企业已通过审核</p>
+				</div>
+				<div class="noPass">
+					<p>该企业审核不合格</p>
+				</div>
+			</div>
+			<!-- 招聘 -->
+			<!-- 查询 -->
+			<div id="checkInfoDiv">
+				<div class="mainLeft">
+					<p class="lookMangerInfo" id="lookMangerInfo">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						个人信息查询
+					</p>
+					<p class="comConformInfo">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						企业信息查询
+					</p>
+					<p class="workArea">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						工作圈
+					</p>
+				</div>
+				<div class="mainRight">
+					<div class="lookMangerInfoDet">
+						<div class="chooseTime">	</div>
+						<!-- 单项搜索个人信息 -->
+						<div class="searbox">
+							<div class="srhyq">
+								<form action="" method="post">
+									<label for="">
+										<span>易企点号:</span>
+										<input type="text" class="form-control yq" placeholder=""/>
+									</label>
+								</form>
+							</div>
+							<div class="srhxm">
+								<form action="" method="post">
+									<label for="">
+										<span>姓名:</span>
+										<input type="text" class="form-control xm"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhdh">
+								<form action="" method="post">
+									<label for="">
+										<span>电话:</span>
+										<input type="text" class="form-control dh"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhxb">
+								<form action="" method="post">
+									<label for="">
+										<span>性别:</span>
+										<select name="" class="form-control xb">
+											<option value="">不限</option>
+											<option value="0">男</option>
+											<option value="1">女</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhmz">
+								<form action="" method="post">
+									<label for="">
+										<span>民族:</span>
+										<select id="nationChoose2" class="select2 mz " data-hide-disabled="true" data-live-search="true">
+											<optgroup disabled="disabled" label="disabled" size="10">
+												<option>Hidden</option>
+											</optgroup>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhcs">
+								<form action="" method="post">
+									<label for="">
+										<span>出生日期:</span>
+										<input type="text" class="form-control cs"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhhk">
+								<form action="" method="post">
+									<label for="">
+										<span>户口性质:</span>
+										<select name="" class="form-control hk">
+											<option value="">不限</option>
+											<option value="城镇">城镇</option>
+											<option value="农村">农村</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhxz">
+								<form class="form-inline" method="post">
+									<div data-toggle="distpicker" id="distpicker">
+										<span>现住址:</span>
+										<div class="form-group">
+											<label class="sr-only" for="province1">Province</label>
+											<select class="form-control" id="province1">	</select>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="city1">City</label>
+											<select class="form-control" id="city1">	</select>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="district1">District</label>
+											<select class="form-control" id="district1">	</select>
+										</div>
+										<div class="form-group">
+											<button class="btn btn-primary form-control" id="reset" type="button">重置</button>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="srhhf">
+								<form action="" method="post">
+									<label for="">
+										<span>婚否:</span>
+										<select name="" class="form-control hf">
+											<option value="">不限</option>
+											<option value="已婚">已婚</option>
+											<option value="未婚">未婚</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhsg">
+								<form action="" method="post">
+									<label for="">
+										<span>身高(cm):</span>
+										<input type="text" class="form-control sg"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhtz">
+								<form action="" method="post">
+									<label for="">
+										<span>体重(kg):</span>
+										<input type="text" class="form-control tz"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhxx">
+								<form action="" method="post">
+									<label for="">
+										<span>血型:</span>
+										<select name="" class="form-control xx">
+											<option value="">不限</option>
+											<option value="A">A</option>
+											<option value="B">B</option>
+											<option value="AB">AB</option>
+											<option value="O">O</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhxy">
+								<form action="" method="post">
+									<label for="">
+										<span>信仰:</span>
+										<select name="" class="form-control xy">
+											<option value="">不限</option>
+											<option value="佛教">佛教</option>
+											<option value="道教">道教</option>
+											<option value="伊斯兰教">伊斯兰教</option>
+											<option value="基督教">基督教</option>
+											<option value="天主教">天主教</option>
+											<option value="其他">其他</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhzz">
+								<form action="" method="post">
+									<label for="">
+										<span>政治面貌:</span>
+										<select name="" class="form-control zz">
+											<option value="">不限</option>
+											<option value="群众">群众</option>
+											<option value="中共党员">中共党员</option>
+											<option value="共青团员">共青团员</option>
+											<option value="民主党派">民主党派</option>
+											<option value="共青团员">共青团员</option>
+											<option value="共青团员">共青团员</option>
+											<option value="其他">其他</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhxq">
+								<form action="" method="post">
+									<label for="">
+										<span>兴趣爱好:</span>
+										<input type="tel" class="form-control xq"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhqq">
+								<form action="" method="post">
+									<label for="">
+										<span>QQ:</span>
+										<input type="text" class="form-control qq"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhwx">
+								<form action="" method="post">
+									<label for="">
+										<span>微信:</span>
+										<input type="text" class="form-control wx"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhyx">
+								<form action="" method="post">
+									<label for="">
+										<span>邮箱:</span>
+										<input type="text" class="form-control yx"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhjj">
+								<form action="" method="post">
+									<label for="">
+										<span>紧急联系人:</span>
+										<input type="text" class="form-control jj"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhwy">
+								<form action="" method="post">
+									<label for="">
+										<span>外语等级:</span>
+										<select name="" class="form-control wy">
+											<option value="">不限</option>
+											<option value="英语四级">英语四级</option>
+											<option value="英语六级">英语六级</option>
+											<option value="专业英语四级">专业英语四级</option>
+											<option value="专业英语八级">专业英语八级</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhby">
+								<form action="" method="post">
+									<label for="">
+										<span>毕业院校:</span>
+										<input type="text" class="form-control by"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhzy">
+								<form action="" method="post">
+									<label for="">
+										<span>专业:</span>
+										<input type="text" class="form-control zy"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhwh">
+								<form action="" method="post">
+									<label for="">
+										<span>文化程度:</span>
+										<select name="" class="form-control wh">
+											<option value="">不限</option>
+											<option value="初中">初中</option>
+											<option value="高中">高中</option>
+											<option value="专科">专科</option>
+											<option value="本科">本科</option>
+											<option value="硕士">硕士</option>
+											<option value="博士">博士</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhzc">
+								<form action="" method="post">
+									<label for="">
+										<span>注册时间:</span>
+										<input type="text" class="form-control zc"/>
+									</label>
+								</form>
+							</div>
+						</div>
+						<!-- /////////////////////////////////////////////////////// -->
+						<!-- 个人信息表 -->
+						<div class="col-lg-12 peosonTable">
+							<div id="chakanInfoTable">
+								<ul class="thcont">
+									<li>序号</li>
+									<li>账号状态</li>
+									<li>操作账号</li>
+									<li>易企点号</li>
+									<li>姓名</li>
+									<li>电话</li>
+									<li>性别</li>
+									<li>民族</li>
+									<li>出生日期</li>
+									<li>生日</li>
+									<li>户口性质</li>
+									<li>现住址</li>
+									<li>婚否</li>
+									<li>身高(cm)</li>
+									<li>体重(km)</li>
+									<li>血型</li>
+									<li>信仰</li>
+									<li>政治面貌</li>
+									<li>兴趣爱好</li>
+									<li>QQ</li>
+									<li>微信</li>
+									<li>邮箱</li>
+									<li>紧急联系人</li>
+									<li>外语等级</li>
+									<li>毕业院校</li>
+									<li>所学专业</li>
+									<li>文化程度</li>
+									<li>注册时间</li>
+								</ul>
+							</div>
+							<br/>
+							<p class="btnArea clearfix">
+								<button class="personBtnPrve pull-left">上一页</button>
+								<button class="personBtnNext pull-right">下一页</button>
+							</p>
+						</div>
+						<div class="zhanghaoStatusDiv">
+							<form action="" class="form-inline">
+								<label for="">
+									<span>禁用时长</span>
+									<input type="number" class="form-control forbiddenTime"/>
+									天
+								</label>
+								<br/>
+								<label for="">
+									<span>禁用原因</span>
+									<textarea name="" id="forbiddenReason" cols="60" rows="5" class="form-control">	</textarea>
+								</label>
+								<br/>
+							</form>
+						</div>
+						<div class="jiefengStatusDiv">
+							<p>确定解封该账号?</p>
+						</div>
+					</div>
+					<div class="lookCompanyInfoDet">
+						<div class="chooseTime2">
+							<input type="text" id="test5" placeholder="请选择时间"/>
+							<span class="time2">
+								<span class="glyphicon glyphicon-calendar">	</span>
+							</span>
+							<button class="lookComBtn">查看</button>
+							<button class="downComBtn">导出</button>
+						</div>
+						<div>
+							<table id="chakanRegComTable">
+								<thead>
+									<tr>
+										<th data-field="com_name">公司名称</th>
+										<th data-field="com_contact">联系方式</th>
+										<th data-field="com_adress">公司地址</th>
+										<th data-field="com_hangye">所属行业</th>
+										<th data-field="com_dutyman">公司法人</th>
+										<th data-field="com_dutytel">法人电话</th>
+										<th data-field="com_dutyIDnum">法人身份证号</th>
+										<th data-field="com_emai">公司邮箱</th>
+										<th data-field="createTime">注册时间</th>
+										<th data-field="staffName">注册人姓名</th>
+										<th data-field="uname">注册人手机号</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+						</div>
+					</div>
+					<!-- 工作圈 -->
+					<div class="workAreaDiv">
+						<p class="form-inline">
+							<!-- <input type="text" class="form-control"> -->
+							<button class="searchWorkBtn">高级搜索</button>
+						</p>
+						<div class="chooseWorkAreaDiv form-inline">
+							<label for="">
+								<span>*</span>
+								<span>内容</span>
+								<textarea name="" id="workContent" cols="60" rows="5" class="form-control" placeholder="此项为必填">	</textarea>
+							</label>
+							<label for="">
+								<span>	</span>
+								<span>姓名</span>
+								<input type="text" class="form-control" id="workName"/>
+							</label>
+							<label for="">
+								<span>	</span>
+								<span>手机</span>
+								<input type="text" class="form-control" id="workTel"/>
+							</label>
+							<label for="">
+								<span>	</span>
+								<span>地区</span>
+								<select id="proviceWork" class="form-control">
+									<option value="=请选择=">=请选择=</option>
+								</select>
+								<select id="cityWork" class="form-control">
+									<option value="=请选择=">=请选择=</option>
+								</select>
+								<select id="countyWork" class="form-control">
+									<option value="=请选择=">=请选择=</option>
+								</select>
+							</label>
+							<label for="">
+								<span>	</span>
+								<span>工作圈类型</span>
+								<select name="" id="workType" class="form-control">
+									<option value="0">工作圈</option>
+									<option value="1">网页连接</option>
+									<option value="2">视频</option>
+									<option value="3">音乐</option>
+									<option value="4">广告</option>
+								</select>
+							</label>
+							<label for="">
+								<span>	</span>
+								<span>开始发布时间</span>
+								<input type="text" class="form-control" id="workStartTime"/>
+							</label>
+							<label for="">
+								<span>	</span>
+								<span>结束发布时间</span>
+								<input type="text" class="form-control" id="workEndTime"/>
+							</label>
+						</div>
+						<div class="col-lg-12">
+							<!-- 工作圈表 -->
+							<table id="workAreaTable">
+								<thead>
+									<tr>
+										<th data-field="staffName">	</th>
+										<th data-field="uname">	</th>
+										<th data-field="Message">	</th>
+										<th data-field="newImages">	</th>
+										<th data-field="option">	</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+							<p class="workbtnArea">
+								<button class="workAreaBtnPrve pull-left">上一页</button>
+								<button class="workAreaBtnNext pull-right">下一页</button>
+							</p>
+						</div>
+						<div class="deleteWorkArea">
+							<p>确定删除该工作圈内容？</p>
+						</div>
+					</div>
+					<div class="comConformInfoDet">
+						<!-- 单项搜索企业信息 -->
+						<div class="searchbox2">
+							<div class="srhmc">
+								<form action="" method="post">
+									<label for="">
+										<span>企业名称:</span>
+										<input type="text" class="form-control mc"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhjc">
+								<form action="" method="post">
+									<label for="">
+										<span>企业简称:</span>
+										<input type="text" class="form-control jc"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhrs">
+								<form action="" method="post">
+									<label for="">
+										<span>企业人数:</span>
+										<select name="" class="form-control rs">
+											<option value="">=请选择=</option>
+											<option value="1~50">1~50</option>
+											<option value="51~100">51~100</option>
+											<option value="101~200">101~200</option>
+											<option value="201~500">201~500</option>
+											<option value="501~1000">501~1000</option>
+											<option value="1001~2000">1001~2000</option>
+											<option value="2001~5000">2001~5000</option>
+											<option value="5001~10000">5001~10000</option>
+											<option value="10001~2000000">10000人以上</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhyx2">
+								<form action="" method="post">
+									<label for="">
+										<span>企业邮箱:</span>
+										<input type="text" class="form-control yx2"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhfr">
+								<form action="" method="post">
+									<label for="">
+										<span>企业法人:</span>
+										<input type="text" class="form-control fr"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhdh2">
+								<form action="" method="post">
+									<label for="">
+										<span>法人电话:</span>
+										<input type="text" class="form-control dh2"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhsj">
+								<form action="" method="post">
+									<label for="">
+										<span>时间:</span>
+										<input type="text" class="form-control sj"/>
+									</label>
+								</form>
+							</div>
+							<div class="srhxz2">
+								<form action="" method="post">
+									<label for="">
+										<span>企业性质</span>
+										<select name="" class="form-control xz2">
+											<option value="">不限</option>
+											<option value="国有企业">国有企业</option>
+											<option value="外资企业">外资企业</option>
+											<option value="合资企业">合资企业</option>
+											<option value="私营企业">私营企业</option>
+											<option value="民营企业">民营企业</option>
+											<option value="股份制企业">股份制企业</option>
+											<option value="有限责任制企业">有限责任制企业</option>
+											<option value="独资企业">独资企业</option>
+											<option value="集体乡镇企业">集体乡镇企业</option>
+											<option value="集体事业">集体事业</option>
+											<option value="行政机关">行政机关</option>
+											<option value="社会团体">社会团体</option>
+											<option value="事业单位">事业单位</option>
+											<option value="跨国集团">跨国集团</option>
+											<option value="其他">其他</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<div class="srhzcd">
+								<form class="form-inline" method="post">
+									<div data-toggle="distpicker" id="distpicker2">
+										<span>注册地:</span>
+										<div class="form-group">
+											<label class="sr-only" for="comprovince">Province</label>
+											<select class="form-control" id="comprovince">	</select>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="comcity">City</label>
+											<select class="form-control" id="comcity">	</select>
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="comdistrict">District</label>
+											<select class="form-control" id="comdistrict">	</select>
+										</div>
+										<div class="form-group">
+											<button class="btn btn-primary form-control" id="comreset" type="button">重置</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- 企业信息表 -->
+						<div class="col-lg-12">
+							<div id="comConformInfoTable">
+								<ul class="thcontrc">
+									<li>序号</li>
+									<li>公司LOGO</li>
+									<li>企业名称</li>
+									<li>企业简称</li>
+									<li>企业人数</li>
+									<li>企业邮箱</li>
+									<li>法人姓名</li>
+									<li>法人电话</li>
+									<li>注册时间</li>
+									<li>企业性质</li>
+									<li>公司注册地</li>
+								</ul>
+							</div>
+							<br/>
+							<p class="combtnArea clearfix">
+								<button class="companyBtnPrve pull-left">上一页</button>
+								<button class="companyBtnNext pull-right">下一页</button>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 账号管理 -->
+			<div id="zhanghaoManger">
+				<div class="mainLeft">
+					<p class="lookZhanghao active">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						管辖账号
+					</p>
+					<p class="infoMation">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						个人信息
+					</p>
+				</div>
+				<div class="mainRight">
+					<!-- 管辖账号 -->
+					<div class="zhanghaoDiv">
+						<div class="addMangerDet col-lg-6 cl-md-6 col-sm-8 col-xs-8">
+							<form action="" class="form-inline" id="addPerson">
+								<label for="">
+									<span>手机号</span>
+									<input type="text" class="form-control cellphone"/>
+								</label>
+								<label for="">
+									<span>密码</span>
+									<input type="text" class="form-control password"/>
+								</label>
+								<label for="">
+									<span>名字</span>
+									<input type="text" class="form-control nameVal"/>
+								</label>
+								<label for="" class="labelLar info">
+									<span>其户籍地址</span>
+									<select id="s_province" name="s_province" class="form-control">	</select>
+									<select id="s_city" name="s_city" class="form-control">	</select>
+									<select id="s_county" name="s_county" class="form-control">	</select>
+								</label>
+								<label for="">
+									<span>性别</span>
+									<select name="" id="sexChoose" class="form-control">
+										<option value="男">男</option>
+										<option value="女">女</option>
+									</select>
+								</label>
+								<label for="">
+									<span>身份证号码</span>
+									<input type="text" class="form-control idNumVal"/>
+								</label>
+								<label for="">
+									<span>QQ</span>
+									<input type="text" class="form-control qqVal"/>
+								</label>
+								<label for="">
+									<span>微信号</span>
+									<input type="text" class="form-control weChatVal"/>
+								</label>
+								<label for="">
+									<span>邮箱</span>
+									<input type="text" class="form-control emailVal"/>
+								</label>
+								<label for="">
+									<span>管理员等级</span>
+									<select name="" id="powder" class="form-control">
+										<option value="1" id="firstOPtion">总经理</option>
+										<option value="2" id="secOption">省代理</option>
+										<option value="3" id="thirdOption">市代理</option>
+										<option value="4" id="fourOption">区代理</option>
+									</select>
+								</label>
+								<label for="" id="powderProvice">
+									<span>省负责区域</span>
+									<input type="text" class="form-control provideChoose"/>
+								</label>
+								<label for="" id="powderCity">
+									<span>市负责区域</span>
+									<select id="province2" name="province2" class="form-control">
+										<option value="==请选择==">==请选择==</option>
+									</select>
+									<input type="text" class="form-control cityChoose"/>
+								</label>
+								<label for="" id="powderCountry">
+									<span>区负责区域</span>
+									<select id="province3" name="province3" class="form-control">
+										<option value="==请选择==">==请选择==</option>
+									</select>
+									<select id="city3" name="city3" class="form-control">
+										<option value="==请选择==">==请选择==</option>
+									</select>
+									<input type="text" class="form-control countyChoose"/>
+								</label>
+								<label for="">
+									<span>毕业学校</span>
+									<input type="text" class="form-control"/>
+								</label>
+								<label for="">
+									<span>联系人</span>
+									<input type="text" class="form-control"/>
+								</label>
+								<label for="">
+									<span>联系电话</span>
+									<input type="text" class="form-control"/>
+								</label>
+								<div class="idcardFront clearfix">
+									<div class="pull-left">
+										<span>头像</span>
+										<br/>
+										<span class="regTips">(可不传)</span>
+									</div>
+									<div class="pull-left imglist1">
+										<input type="button" value="上传照片" id="pic1"/>
+										<br/>
+										<input id="upload1" name="file" accept="image/*" type="file" style="display: none"/>
+										<img src=" " alt="" style="display: none" id="pic1Img"/>
+									</div>
+								</div>
+								<div class="idcardHand clearfix">
+									<div class="pull-left">
+										<span>手持身份证照</span>
+										<br/>
+										<span class="regTips">(可不传)</span>
+									</div>
+									<div class="pull-left imglist3">
+										<input type="button" value="上传照片" id="pic3"/>
+										<br/>
+										<input id="upload3" name="file" accept="image/*" type="file" style="display: none"/>
+										<img src=" " alt="" style="display: none" id="pic3Img"/>
+									</div>
+								</div>
+							</form>
+						</div>
+						<!-- 省区域 -->
+						<div class="proviceTable">	</div>
+						<!-- 市区域 -->
+						<div class="cityTable">	</div>
+						<!-- 区区域 -->
+						<div class="countryTable">	</div>
+						<div class="col-lg-12">
+							<p class="clearfix">
+								<button class="addZhanghaoBtn">添加管辖账号</button>
+								<button class="searchBtn pull-right">筛选</button>
+							</p>
+							<table id="zhanghaoTable">
+								<thead>
+									<tr>
+										<th data-field="headimage">头像</th>
+										<th data-field="name">姓名</th>
+										<th data-field="username">手机号</th>
+										<th data-field="sex">性别</th>
+										<th data-field="area">地区</th>
+										<th data-field="province">省份</th>
+										<th data-field="city">城市</th>
+										<th data-field="county">区/县</th>
+										<th data-field="status">状态</th>
+										<th data-field="option">操作</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+							<div class="loadArea">
+								<p>
+									<button class="loadMore">加载更多</button>
+								</p>
+								<p>
+									<button class="loadNo">已加载全部</button>
+								</p>
+							</div>
+							<div class="changeTable form-inline">
+								<p class="form-inline">
+									<span>管理员等级</span>
+									<select name="" id="powder2" class="form-control">
+										<option value="1" id="firstOPtion2">总经理</option>
+										<option value="2" id="secOption2">省代理</option>
+										<option value="3" id="thirdOption2">市代理</option>
+										<option value="4" id="fourOption2">区代理</option>
+									</select>
+								</p>
+								<p id="changeProvice">
+									<span>省份选择</span>
+									<input type="text" class="form-control" id="proChooseInput"/>
+								</p>
+								<p id="changeCity">
+									<span>城市选择</span>
+									<select name="" id="cityChoose1" class="form-control">
+										<option value="==请选择==">==请选择==</option>
+									</select>
+									<input type="text" class="form-control" id="cityChooseInput"/>
+								</p>
+								<p id="changeCountry">
+									<span>区县选择</span>
+									<select name="" id="cityChoose2" class="form-control">
+										<option value="==请选择==">==请选择==</option>
+									</select>
+									<select name="" id="countryChoose" class="form-control">
+										<option value="==请选择==">==请选择==</option>
+									</select>
+									<input type="text" class="form-control" id="quChoose"/>
+								</p>
+							</div>
+							<!-- 筛选Div -->
+							<div class="choosePersonDiv">
+								<form action="" class="form-inline">
+									<label for="">
+										<span>手机号</span>
+										<input type="text" class="form-control searchCount"/>
+									</label>
+									<label for="">
+										<span>姓名</span>
+										<input type="text" class="form-control searchName"/>
+									</label>
+									<label for="" class="">
+										<span>地区</span>
+										<select id="c_province" name="c_province" class="form-control">
+											<option value="">==请选择==</option>
+										</select>
+										<select id="c_city" name="c_city" class="form-control">
+											<option value="">==请选择==</option>
+										</select>
+										<select id="c_county" name="c_county" class="form-control">
+											<option value="">==请选择==</option>
+										</select>
+									</label>
+									<label for="">
+										<span>性别</span>
+										<select name="" id="searchSex" class="form-control">
+											<option value="">不限</option>
+											<option value="男">男</option>
+											<option value="女">女</option>
+										</select>
+									</label>
+									<label for="">
+										<span>账户状态</span>
+										<select name="" id="countStatus" class="form-control">
+											<option value="">不限</option>
+											<option value="0">开通状态</option>
+											<option value="1">禁用状态</option>
+										</select>
+									</label>
+								</form>
+							</div>
+							<!-- 修改省份 -->
+							<div class="changeProDiv">	</div>
+							<!-- 修改城市 -->
+							<div class="changeCityDiv">	</div>
+							<!-- 修改区县 -->
+							<div class="changeArea">	</div>
+							<!-- 修改信息 -->
+							<div class="changeInfoDiv">
+								<form action="" class="form-inline">
+									<label for="">
+										<span>账号</span>
+										<input type="text" class="form-control underCount" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>姓名</span>
+										<input type="text" class="form-control underName" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>性别</span>
+										<input type="text" class="form-control underSex" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>身份证号</span>
+										<input type="text" class="form-control underIDNum" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>户籍地址</span>
+										<input type="text" class="form-control underAdress" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>QQ</span>
+										<input type="text" class="form-control underQQ"/>
+									</label>
+									<label for="">
+										<span>微信</span>
+										<input type="text" class="form-control underWechat"/>
+									</label>
+									<label for="">
+										<span>邮箱</span>
+										<input type="text" class="form-control underEmail"/>
+									</label>
+									<label for="">
+										<span>省份</span>
+										<input type="text" class="form-control underProcive" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>城市</span>
+										<input type="text" class="form-control underCity" disabled="disabled"/>
+									</label>
+									<label for="">
+										<span>区县</span>
+										<input type="text" class="form-control underCountry" disabled="disabled"/>
+									</label>
+								</form>
+							</div>
+							<!-- 修改头像 -->
+							<div class="changePicDiv">
+								<div class="idcardFront4 clearfix">
+									<div class="pull-left">
+										<span>头像</span>
+										<br/>
+										<span class="regTips">(可不传)</span>
+									</div>
+									<div class="pull-left imglist4">
+										<input type="button" value="上传头像" id="pic4"/>
+										<br/>
+										<input id="upload4" name="file" accept="image/*" type="file" style="display: none"/>
+										<img src=" " alt="" style="display: none" id="pic4Img"/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 个人信息 -->
+					<div id="infiDiv">
+						<div class="infoLeft col-lg-3 cl-md-3 col-sm-2 col-xs-2">	</div>
+						<div class="infoDet col-lg-6 cl-md-6 col-sm-8 col-xs-8">
+							<form action="" id="infoShow" class="form-inline">
+								<label for="">
+									<span>账号</span>
+									<input type="text" class="form-control selfTel" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>姓名</span>
+									<input type="text" class="form-control selfName" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>身份证号码</span>
+									<input type="text" class="form-control selfIDNum" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>性别</span>
+									<input type="text" class="form-control selfSex" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>籍贯所在地</span>
+									<input type="text" class="form-control selfArea" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>QQ</span>
+									<input type="text" class="form-control selfQQ"/>
+								</label>
+								<label for="">
+									<span>微信</span>
+									<input type="text" class="form-control selfWechat"/>
+								</label>
+								<label for="">
+									<span>邮箱</span>
+									<input type="text" class="form-control selfEmail"/>
+								</label>
+								<label for="">
+									<span>省份</span>
+									<input type="text" class="form-control selfProvice" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>城市</span>
+									<input type="text" class="form-control selfCity" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>区/县</span>
+									<input type="text" class="form-control selfCountry" disabled="disabled"/>
+								</label>
+							</form>
+							<p>
+								<button class="changeBtn">确认修改</button>
+							</p>
+							<hr/>
+							<div class="idcardFront2 clearfix">
+								<div class="pull-left">
+									<span>头像</span>
+									<br/>
+									<span class="regTips">(可不传)</span>
+								</div>
+								<div class="pull-left imglist2">
+									<input type="button" value="上传头像" id="pic2" class="btn btn-primary btn-sm"/>
+									<br/>
+									<input id="upload2" name="file" accept="image/*" type="file" style="display: none"/>
+									<img src=" " alt="" style="display: none" id="pic2Img"/>
+								</div>
+								<p>
+									<button class="changeHeadImg">修改头像</button>
+								</p>
+							</div>
+						</div>
+						<div class="infoRight col-lg-3 cl-md-3 col-sm-2 col-xs-2">	</div>
+					</div>
+				</div>
+			</div>
+			<!-- 收费 -->
+			<div id="shouFeiDiv">
+				<div class="mainLeft">
+					<p class="functionSet active">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						功能管理
+					</p>
+					<p class="activeSet">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						活动管理
+					</p>
+					<p class="trySet">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						试用管理
+					</p>
+					<p class="tradeCheck">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						交易记录管理
+					</p>
+					<p class="eqbuy">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						易企购广告管理
+					</p>
+					<p class="eqbuyDemand">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						易企购需求管理
+					</p>
+					<p class="spread">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						讲师推广
+					</p>
+					<p class="advisory">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						咨询师推广
+					</p>
+					<p class="activity">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						活动推广
+					</p>
+					<p class="orgnize">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						机构推广
+					</p>
+					<p class="recommend">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边推荐讲师
+					</p>
+					<p class="course">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边推荐课程
+					</p>
+					<p class="jskOrg">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边推荐机构
+					</p>
+					<p class="consultant">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边推荐咨询师
+					</p>
+					<p class="jskAct">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边推荐活动
+					</p>
+					<p class="jskTrain">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边培训需求
+					</p>
+					<p class="jskAdvisory">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk侧边咨询需求
+					</p>
+					<p class="jskLunbo">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						jsk首页轮播图
+					</p>
+					<p class="eqdLunbo">
+						<span class="glyphicon glyphicon-list aria-hidden='true' ">	</span>
+						易企点首页轮播图
+					</p>
+				</div>
+				<div class="mainRight">
+					<!-- 功能设置 -->
+					<div class="functionSetDiv">
+						<ul class="cd-tabs-content">
+							<li  class="selected">
+								<p>
+									<button class="addFunctionBtn">添加功能设置</button>
+								</p>
+								<div class="col-lg-12 recDiv">
+									<table id="mangerTable">
+										<thead>
+											<tr>
+												<th data-field="ModularName">	</th>
+												<th data-field="VipPrice">	</th>
+												<th data-field="discount">	</th>
+												<th data-field="resultMondy">	</th>
+												<th data-field="ModularDescribe">	</th>
+												<th data-field="option">	</th>
+											</tr>
+										</thead>
+									</table>
+									<br/>
+								</div>
+								<!-- 添加模块 -->
+								<div class="addFunctionDiv">
+									<form action="" class="form-inline" id="addModel">
+										<label for="">
+											<span>模块名称</span>
+											<input type="text" class="form-control modelName"/>
+										</label>
+										<br/>
+										<br/>
+										<label for="">
+											<span>会员价格</span>
+											<input type="text" class="form-control modelPrice"/>
+											元/年
+										</label>
+										<br/>
+										<br/>
+										<label for="" class="describ">
+											<span>模块简述</span>
+											<textarea name="" id="modelDescrib" cols="60" rows="5" class="form-control">	</textarea>
+										</label>
+										<br/>
+										<br/>
+									</form>
+								</div>
+								<!-- 删除模块 -->
+								<div class="deleteDiv">确定删除该模块？</div>
+								<!--  -->
+								<div class="changeFunctionDiv">
+									<form action="" class="form-inline" id="changeModel">
+										<label for="">
+											<span>模块名称</span>
+											<input type="text" class="form-control modelName2"/>
+										</label>
+										<br/>
+										<br/>
+										<label for="">
+											<span>会员价格</span>
+											<input type="text" class="form-control modelPrice2"/>
+											元/年
+										</label>
+										<br/>
+										<br/>
+										<label for="">
+											<span>折扣</span>
+											<select name="" id="discount" class="form-control">
+												<option value="1">10</option>
+												<option value="0.9">9</option>
+												<option value="0.8">8</option>
+												<option value="0.7">7</option>
+												<option value="0.6">6</option>
+												<option value="0.5">5</option>
+												<option value="0.4">4</option>
+												<option value="0.3">3</option>
+												<option value="0.2">2</option>
+												<option value="0.1">1</option>
+											</select>
+											折
+										</label>
+										<br/>
+										<br/>
+										<label for="" class="describ2">
+											<span>模块简述</span>
+											<textarea name="" id="modelDescrib2" cols="60" rows="5" class="form-control">	</textarea>
+										</label>
+										<br/>
+										<br/>
+									</form>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<!-- 活动设置 -->
+					<div class="activeSetDiv">
+						<p class="form-inline">
+							活动状态
+							<select name="" id="chooseActivityType" class="form-control">
+								<option value="0">未审核</option>
+								<option value="1">已审核</option>
+							</select>
+						</p>
+						<div class="col-lg-12 recDiv">
+							<table id="activityTable">
+								<thead>
+									<tr>
+										<th data-field="activeTitle">	</th>
+										<th data-field="activeCity">	</th>
+										<th data-field="activeStartTime">	</th>
+										<th data-field="activer">	</th>
+										<th data-field="option">	</th>
+									</tr>
+								</thead>
+							</table>
+							<p class="actmArea clearfix">
+								<button class="actmNext pull-right">下一页</button>
+								<button class="actmPrve pull-right">上一页</button>
+							</p>
+						</div>
+						<!-- 拒绝 -->
+						<div class="refuseActivityDiv">
+							<textarea name="" id="refuseActivityReason" cols="30" rows="5" class="form-control" placeholder="拒绝理由，简要叙述">	</textarea>
+						</div>
+					</div>
+					<!-- 使用设置 -->
+					<div class="trySetDiv">3</div>
+					<!-- 易企购广告 -->
+					<div class="eqbuyDiv">
+						<p class="form-inline">
+							<button id="addProductBtn">添加产品广告</button>
+							<select name="" id="lookProductType" class="form-control">
+								<option value="0">推荐产品广告</option>
+								<option value="1">热门产品广告</option>
+							</select>
+						</p>
+						<div class="col-lg-12">
+							<table id="productTable">
+								<thead>
+									<tr>
+										<th data-field="productName">	</th>
+										<th data-field="productType">	</th>
+										<th data-field="company">	</th>
+										<th data-field="productArea">	</th>
+										<th data-field="option">	</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+						</div>
+						<div class="addProductDiv">
+							<form action="" class="form-inline">
+								<label for="">
+									<span>*</span>
+									<span>选择类型</span>
+									<select name="" id="chooseadType" class="form-control">
+										<option value="0">推荐产品广告</option>
+										<option value="1">热门产品广告</option>
+									</select>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>产品详情网址</span>
+									<input type="text" class="form-control" id="productHref"/>
+									<input type="button" value="确定" id="hrefBtn" class="btn btn-sm btn-primary"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>产品名称</span>
+									<input type="text" class="form-control productName" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>产品类型</span>
+									<input type="text" class="form-control productType" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>产品价格</span>
+									<input type="text" class="form-control productPrice" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>产品地区</span>
+									<input type="text" class="form-control productArea" disabled="disabled"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>推广开始时间</span>
+									<input type="text" class="form-control" id="adBeginTime"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>推广结束时间</span>
+									<input type="text" class="form-control" id="adEndTime"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>广告顺序</span>
+									<input type="text" class="form-control" id="sort"/>
+								</label>
+								<div class="yingyeCard clearfix">
+									<div class="pull-left">
+										<span>产品封面照片</span>
+										<br/>
+										<span class="regTips">(必传)</span>
+									</div>
+									<div class="pull-left imglist5">
+										<input type="button" value="上传照片" id="pic5" class="btn btn-sm"/>
+										<br/>
+										<input id="upload5" name="file" accept="image/*" type="file" style="display: none"/>
+										<img src=" " alt="" style="display: none" id="pic5Img"/>
+									</div>
+								</div>
+							</form>
+						</div>
+						<div class="deleteProductDiv">
+							<p>确定删除</p>
+						</div>
+					</div>
+					<!-- 易企购需求 -->
+					<div class="eqbuyDemandDiv">
+						<p class="form-inline">
+							<button id="addDemandBtn">添加需求广告</button>
+							<select name="" id="lookDemandType" class="form-control">
+								<option value="2">推荐需求广告</option>
+								<option value="3">热门需求广告</option>
+							</select>
+						</p>
+						<div class="col-lg-12">
+							<table id="demandTable">
+								<thead>
+									<tr>
+										<th data-field="productName">	</th>
+										<th data-field="productType">	</th>
+										<th data-field="company">	</th>
+										<th data-field="productArea">	</th>
+										<th data-field="option">	</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+						</div>
+						<!-- 添加易企购需求 -->
+						<div class="addDemandDiv">
+							<form action="" class="form-inline">
+								<label for="">
+									<span>*</span>
+									<span>选择类型</span>
+									<select name="" id="demandType" class="form-control">
+										<option value="2">推荐需求广告</option>
+										<option value="3">热门需求广告</option>
+									</select>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>需求详情网址</span>
+									<input type="text" class="form-control" id="demandHref"/>
+									<input type="button" value="确定" id="demandhrefBtn" class="btn btn-sm"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>需求名称</span>
+									<input type="text" class="form-control demandName"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>需求类型</span>
+									<input type="text" class="form-control demandType"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>需求预算</span>
+									<input type="text" class="form-control demandPrice"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>需求地区</span>
+									<input type="text" class="form-control demandArea"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>广告开始时间</span>
+									<input type="text" class="form-control" id="demandBeginTime"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>广告结束时间</span>
+									<input type="text" class="form-control" id="demandEndTime"/>
+								</label>
+								<label for="">
+									<span>*</span>
+									<span>广告顺序</span>
+									<input type="text" class="form-control" id="demandSort"/>
+								</label>
+							</form>
+						</div>
+						<!-- 删除 -->
+						<div class="deleteDemandDiv">
+							<p>确定删除?</p>
+						</div>
+					</div>
+					<!-- 讲师推广 -->
+					<div class="spreadDiv">
+						<div class="cd-tabs col-lg-12">
+							<nav>
+								<ul class="cd-tabs-navigation">
+									<li>
+										<a data-content="inbox" class="selected" href="#0">讲师推荐</a>
+									</li>
+									<li>
+										<a data-content="new" href="#0">讲师分类</a>
+									</li>
+								</ul>
+							</nav>
+							<ul class="cd-tabs-content">
+								<li data-content="inbox" class="selected">
+									<button class="addRecTeacher">添加推荐讲师</button>
+									<div class="col-lg-12 recDiv">
+										<table id="recommendTable" class="table table-hover">	</table>
+										<p class="jstjArea clearfix">
+											<button class="jstjNext pull-right">下一页</button>
+											<button class="jstjPrve pull-right">上一页</button>
+										</p>
+									</div>
+								</li>
+								<li data-content="new">
+									<button class="addSortTeacher">添加讲师分类</button>
+									<div class="col-lg-12 recDiv">
+										<table id="sortTable" class="table table-hover">	</table>
+										<p class="jstjArea2 clearfix">
+											<button class="jstjNext2 pull-right">下一页</button>
+											<button class="jstjPrve2 pull-right">上一页</button>
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 咨询师推广 -->
+					<div class="advisoryDiv">
+						<div class="cd-tabs col-lg-12">
+							<nav>
+								<ul class="cd-tabs-navigation">
+									<li>
+										<a data-content="inbox" class="selected" href="#0">咨询师推荐</a>
+									</li>
+									<li>
+										<a data-content="new" href="#0">咨询师分类</a>
+									</li>
+								</ul>
+							</nav>
+							<ul class="cd-tabs-content">
+								<li data-content="inbox" class="selected">
+									<button class="addAdvTeacher">添加推荐咨询师</button>
+									<div class="col-lg-12 recDiv">
+										<table id="advTable" class="table table-hover">	</table>
+										<p class="advArea clearfix">
+											<button class="advNext pull-right">下一页</button>
+											<button class="advPrve pull-right">上一页</button>
+										</p>
+									</div>
+								</li>
+								<li data-content="new">
+									<button class="addSortAdvTeacher">添加咨询师分类</button>
+									<div class="col-lg-12 recDiv">
+										<table id="advSortTable" class="table table-hover">	</table>
+										<p class="advArea2 clearfix">
+											<button class="advNext2 pull-right">下一页</button>
+											<button class="advPrve2 pull-right">上一页</button>
+										</p>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 活动推广 -->
+					<div class="activityDiv">
+						<div class="cd-tabs col-lg-12">
+							<nav>
+								<ul class="cd-tabs-navigation">
+									<li>
+										<a data-content="recAct" class="selected" href="#0">推荐活动</a>
+									</li>
+									<li>
+										<a data-content="actSort" href="#0">活动分类分类</a>
+									</li>
+								</ul>
+							</nav>
+							<ul class="cd-tabs-content">
+								<li data-content="recAct" class="selected">
+									<button class="addAct">添加推荐活动</button>
+									<div class="col-lg-12 recDiv">
+										<table id="actTable" class="table table-hover">	</table>
+									</div>
+								</li>
+								<li data-content="actSort">
+									<button class="addActSort">添加活动分类</button>
+									<div class="col-lg-12 recDiv">
+										<table id="actSortTable" class="table table-hover">	</table>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 机构推广 -->
+					<div class="orgnizeDiv">
+						<div class="cd-tabs col-lg-12">
+							<nav>
+								<ul class="cd-tabs-navigation">
+									<li>
+										<a data-content="org" class="selected" href="#0">推荐机构</a>
+									</li>
+									<li>
+										<a data-content="orgSort" href="#0">机构分类</a>
+									</li>
+								</ul>
+							</nav>
+							<ul class="cd-tabs-content">
+								<li data-content="org" class="selected">
+									<button class="addOrg">添加推荐机构</button>
+									<div class="col-lg-12 recDiv">
+										<table id="orgTable" class="table table-hover">	</table>
+									</div>
+								</li>
+								<li data-content="orgSort">
+									<button class="addOrgSort">添加机构分类</button>
+									<div class="col-lg-12 recDiv">
+										<table id="orgSortTable" class="table table-hover">	</table>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 金师库侧边推荐讲师 -->
+					<div class="recommendDiv">
+						<ul class="cd-tabs-content">
+							<li data-content="recTeacher" class="selected">
+								<button class="addJskRec">添加推荐讲师</button>
+								<div class=" recDiv">
+									<table id="jskRecTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnJskArea clearfix">
+									<button class="recBtnNext pull-right">下一页</button>
+									<button class="recBtnPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库侧边推荐课程 -->
+					<div class="courseDiv">
+						<ul class="cd-tabs-content">
+							<li data-content="course" class="selected">
+								<button class="addCourse">添加推荐课程</button>
+								<div class=" recDiv">
+									<table id="courseTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnCourseArea clearfix">
+									<button class="courseNext pull-right">下一页</button>
+									<button class="coursePrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库侧边推荐机构 -->
+					<div class="jskOrgDiv">
+						<ul class="cd-tabs-content">
+							<li data-content="jskOrg" class="selected">
+								<button class="addJskOrg">添加推荐机构</button>
+								<div class="recDiv">
+									<table id="jskOrgTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnOrgArea clearfix">
+									<button class="orgNext pull-right">下一页</button>
+									<button class="orgPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库侧边推荐咨询师 -->
+					<div class="consultantDiv">
+						<ul class="cd-tabs-content">
+							<li data-content="consultant" class="selected">
+								<button class="addJskCst">添加推荐咨询师</button>
+								<div class="recDiv">
+									<table id="jskCstTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnCstArea clearfix">
+									<button class="cstNext pull-right">下一页</button>
+									<button class="cstPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库侧边推荐活动 -->
+					<div class="jskActDiv">
+						<ul class="cd-tabs-content">
+							<li data-content="consultant" class="selected">
+								<button class="addJskAct">添加推荐咨询师</button>
+								<div class="recDiv">
+									<table id="jskActTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnActArea clearfix">
+									<button class="actNext pull-right">下一页</button>
+									<button class="actPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库侧边培训需求 -->
+					<div class="jskTrainDiv">
+						<ul class="cd-tabs-content">
+							<li class="selected">
+								<button class="addJskTrain">添加培训需求</button>
+								<div class="recDiv">
+									<table id="jskTrainTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnTrainArea clearfix">
+									<button class="trainNext pull-right">下一页</button>
+									<button class="trainPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库侧边咨询需求 -->
+					<div class="jskAdvisoryDiv">
+						<ul class="cd-tabs-content">
+							<li class="selected">
+								<button class="addJskAdvisory">添加咨询需求</button>
+								<div class="recDiv">
+									<table id="jskAdvisoryTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnAdvisoryArea clearfix">
+									<button class="advisoryNext pull-right">下一页</button>
+									<button class="advisoryPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 金师库轮播图 -->
+					<div class="jskLunboDiv">
+						<ul class="cd-tabs-content">
+							<li class="selected">
+								<button class="addJskLunbo">添加轮播图</button>
+								<div class="recDiv">
+									<table id="jskLunboTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnLunboArea clearfix">
+									<button class="LunboNext pull-right">下一页</button>
+									<button class="LunboPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 易企点app轮播图 -->
+					<div class="eqdLunboDiv">
+						<ul class="cd-tabs-content">
+							<li class="selected">
+								<button class="addEqdLb">添加轮播图</button>
+								<div class="recDiv">
+									<table id="eqdLbTable" class="table table-hover">	</table>
+								</div>
+								<p class="btnLunboArea clearfix">
+									<button class="eqdlbNext pull-right">下一页</button>
+									<button class="eqdlbPrve pull-right">上一页</button>
+								</p>
+							</li>
+						</ul>
+					</div>
+					<!-- 删除轮播弹窗 -->
+					<div class="eqdDel">
+						<p>是否删除</p>
+					</div>
+					<!-- 弹窗 -->
+					<!-- 讲师推广 -->
+					<div class="addTeacherRec">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>讲师手机号：</span>
+								<input type="text" class="form-control teachPhone"/>
+								<input type="button" value="检索讲师" class="btn btn-primary btn-sm searchTeacher"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师头像：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImg"/>
+							</label>
+							<input id="headImg" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImg">
+								<img src="../image/upload.png" alt="" id="showImg"/>
+								<img src=" " class="realImg"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>讲师姓名：</span>
+								<input type="text" class="form-control teachName"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control lastDate"/>
+								<span class="monthNum">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control recCode"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师排序：</span>
+								<input type="text" class="form-control jspx"/>
+							</label>
+							
+						</form>
+					</div>
+					<div class="addTeacherSort">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>讲师手机号：</span>
+								<input type="text" class="form-control teachPhone2"/>
+								<input type="button" value="检索讲师" class="btn btn-primary btn-sm searchTeacher2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师头像：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImg2"/>
+							</label>
+							<input id="headImg2" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImg2">
+								<img src="../image/upload.png" alt="" id="showImg2"/>
+								<img src=" " class="realImg2"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>讲师姓名：</span>
+								<input type="text" class="form-control teachName2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师类别：</span>
+								<div class="hyitems  ">	</div>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control lastDate2"/>
+								<span class="monthNum">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control recCode2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师排序：</span>
+								<input type="text" class="form-control recPx"/>
+							</label>
+						</form>
+					</div>
+					<!-- 咨询师推广 -->
+					<div class="addTeacherAdv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>咨询师手机号：</span>
+								<input type="text" class="form-control advTeachPhone"/>
+								<input type="button" value="检索讲师" class="btn btn-primary btn-sm searchAdvTeacher"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>咨询师头像：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgAdv"/>
+							</label>
+							<input id="headImgAdv" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgAdv">
+								<img src="../image/upload.png" alt="" id="showImgAdv"/>
+								<img src=" " class="realImgAdv"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>咨询师姓名：</span>
+								<input type="text" class="form-control advTeachName"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control advLastDate"/>
+								<span class="monthNum">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control advCode"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>咨询师排序：</span>
+								<input type="text" class="form-control zxspx"/>
+							</label>
+						</form>
+					</div>
+					<div class="addTeacherSortAdv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>讲师手机号：</span>
+								<input type="text" class="form-control advSortTeachPhone"/>
+								<input type="button" value="检索讲师" class="btn btn-primary btn-sm advSortSearchTeacher"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师头像：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgAdvSort"/>
+							</label>
+							<input id="headImgAdvSort" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgAdvSort">
+								<img src="../image/upload.png" alt="" id="showImgAdvSort"/>
+								<img src=" " class="realImgAdvSort"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>讲师姓名：</span>
+								<input type="text" class="form-control advSortTeachName"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师类别：</span>
+								<div class="hyitemsAdv  ">	</div>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control advSortLastDate"/>
+								<span class="monthNum">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control advSortCode"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>咨询师排序：</span>
+								<input type="text" class="form-control jspxSort"/>
+							</label>
+						</form>
+					</div>
+					<!-- 金师库侧边推荐讲师 -->
+					<div class="addJskTeacherRec">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>讲师手机号：</span>
+								<input type="text" class="form-control teachPhoneJsk"/>
+								<input type="button" value="检索讲师" class="btn btn-primary btn-sm searchJskTeacher"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师头像：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgJsk"/>
+							</label>
+							<input id="headImgJsk" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgJsk">
+								<img src="../image/upload.png" alt="" id="showImgJsk"/>
+								<img src=" " class="realImgJsk"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>讲师姓名：</span>
+								<input type="text" class="form-control teachNameJsk"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control lastDateJsk"/>
+								<span class="monthNum">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control recCodeJsk"/>
+							</label>
+						</form>
+					</div>
+					<!-- 金师库侧边推荐课程 -->
+					<div class="addCourseDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>课程ID：</span>
+								<input type="text" class="form-control courseId"/>
+								<img class="why-icon3" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control courseLong"/>
+								<span class="monthNum5">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control courseCode"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv3">
+						<p>课程ID指的是课程详情页地址URL末端拼接字段id的值，如下图所示ID的值为85：</p>
+						<img src="../image/whatId3.png"/>
+					</div>
+					<!-- 金师库侧边推荐机构 -->
+					<div class="addJskOrgDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>机构ID：</span>
+								<input type="text" class="form-control jskOrgId"/>
+								<img class="why-icon4" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control jskOrgLong"/>
+								<span class="monthNum5">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control jskOrgCode"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv4">
+						<p>机构ID指的是企业主页地址URL末端拼接字段conpanyId的值，如下图所示ID的值为46：</p>
+						<img src="../image/whatId4.png"/>
+					</div>
+					<!-- 金师库推荐咨询师 -->
+					<div class="addConsultantDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>讲师手机号：</span>
+								<input type="text" class="form-control teachPhoneCst"/>
+								<input type="button" value="检索讲师" class="btn btn-primary btn-sm searchCstTeacher"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>讲师头像：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgCst"/>
+							</label>
+							<input id="headImgCst" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgCst">
+								<img src="../image/upload.png" alt="" id="showImgCst"/>
+								<img src=" " class="realImgCst"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>讲师姓名：</span>
+								<input type="text" class="form-control teachNameCst"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control lastDateCst"/>
+								<span class="monthNum">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control recCodeCst"/>
+							</label>
+						</form>
+					</div>
+					<!-- 金师库侧边推荐活动 -->
+					<div class="addJskActDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>活动ID：</span>
+								<input type="text" class="form-control jskActId"/>
+								<img class="why-icon5" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control jskActLong"/>
+								<span class="monthNum5">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control jskActCode"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv5">
+						<p>活动ID指的是活动详情页地址URL末端拼接字段id的值，如下图所示ID的值为1：</p>
+						<img src="../image/whatId5.png"/>
+					</div>
+					<!-- 金师库侧边培训需求 -->
+					<div class="addJskTrainDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>培训需求ID：</span>
+								<input type="text" class="form-control jskTrainId"/>
+								<img class="why-icon6" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control jskTrainLong"/>
+								<span class="monthNum5">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control jskTrainCode"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv6">
+						<p>培训需求ID指的是培训需求详情页地址URL末端拼接字段id的值，如下图所示ID的值为20：</p>
+						<img src="../image/whatId6.png"/>
+					</div>
+					<!-- 金师库侧边咨询需求 -->
+					<div class="addJskAdvisoryDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>培训需求ID：</span>
+								<input type="text" class="form-control jskAdvisoryId"/>
+								<img class="why-icon7" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control jskAdvisoryLong"/>
+								<span class="monthNum5">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control jskAdvisoryCode"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv7">
+						<p>咨询需求ID指的是培训需求详情页地址URL末端拼接字段id的值，如下图所示ID的值为20：</p>
+						<img src="../image/whatId7.png"/>
+					</div>
+					<!-- 金师库首页轮播图 -->
+					<div class="addJskLbDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>图片：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgLb"/>
+							</label>
+							<input id="headImgLb" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgLb">
+								<img src="../image/upload.png" alt="" id="showImgLb"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>名称：</span>
+								<input type="text" class="form-control jskLbTitle"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>排序：</span>
+								<input type="text" class="form-control jskLbSort"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>图片链接：</span>
+								<input type="text" class="form-control jskLbLink"/>
+							</label>
+						</form>
+					</div>
+					<!-- 修改图片 -->
+					<div class="changeImgDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>图片：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgLb2"/>
+							</label>
+							<input id="headImgLb2" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgLb2">
+								<img src="../image/upload.png" alt="" id="showImgLb2"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>名称：</span>
+								<input type="text" class="form-control jskLbTitle2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>排序：</span>
+								<input type="text" class="form-control jskLbSort2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>图片链接：</span>
+								<input type="text" class="form-control jskLbLink2"/>
+							</label>
+						</form>
+					</div>
+					<!-- 易企点首页轮播图 -->
+					<div class="addeqdLbDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>图片：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgLb3"/>
+							</label>
+							<input id="headImgLb3" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgLb3">
+								<img src="../image/upload.png" alt="" id="showImgLb3"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>名称：</span>
+								<input type="text" class="form-control eqdLbTitle"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>排序：</span>
+								<input type="text" class="form-control eqdLbSort"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>图片链接：</span>
+								<input type="text" class="form-control eqdLbLink"/>
+							</label>
+						</form>
+					</div>
+					<!-- 修改图片 -->
+					<div class="changeImgeqd">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>图片：</span>
+								<input type="button" value="选择照片" class="btn btn-primary btn-sm chooseImgLb4"/>
+							</label>
+							<input id="headImgLb4" name="file" accept="image/*" type="file" style="display: none"/>
+							<div class="preImgLb4">
+								<img src="../image/upload.png" alt="" id="showImgLb4"/>
+							</div>
+							<label for="">
+								<span>*</span>
+								<span>名称：</span>
+								<input type="text" class="form-control eqdLbTitle2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>排序：</span>
+								<input type="text" class="form-control eqdLbSort2"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>图片链接：</span>
+								<input type="text" class="form-control eqdLbLink2"/>
+							</label>
+						</form>
+					</div>
+					<!-- 活动 -->
+					<div class="addActDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>活动ID：</span>
+								<input type="text" class="form-control actId"/>
+								<img class="why-icon" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control dataLong"/>
+								<span class="monthNum3">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control actCode"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>活动排序：</span>
+								<input type="text" class="form-control actPx"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv">
+						<p>活动ID指的是活动详情页地址URL末端拼接字段id的值，如下图所示ID的值为1：</p>
+						<img src="../image/whatId.png"/>
+					</div>
+					<div class="addActSortDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>活动ID：</span>
+								<input type="text" class="form-control actId2"/>
+								<img class="why-icon" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>活动类别：</span>
+								<div class="hyitems2  ">	</div>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control dataLong2"/>
+								<span class="monthNum4">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control actCode2"/>
+							</label>
+						</form>
+					</div>
+					<!-- 机构 -->
+					<div class="addOrgDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>机构ID：</span>
+								<input type="text" class="form-control orgId"/>
+								<img class="why-icon2" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control dataLong3"/>
+								<span class="monthNum3">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control orgCode"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>机构排序：</span>
+								<input type="text" class="form-control orgPx"/>
+							</label>
+						</form>
+					</div>
+					<div class="whatIdDiv2">
+						<p>活动ID指的是企业主页地址URL末端拼接字段conpanyId的值，如下图所示ID的值为59：</p>
+						<img src="../image/whatId2.png"/>
+					</div>
+					<div class="addOrgSortDiv">
+						<form action="" method="" class="form-inline">
+							<label for="">
+								<span>*</span>
+								<span>机构ID：</span>
+								<input type="text" class="form-control orgId2"/>
+								<img class="why-icon2" src="../image/why.png"/>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>机构类别：</span>
+								<div class="hyitems3">	</div>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>推荐时长：</span>
+								<input type="text" class="form-control dataLong4"/>
+								<span class="monthNum3">(个月)</span>
+							</label>
+							<label for="">
+								<span>*</span>
+								<span>交易码：</span>
+								<input type="text" class="form-control orgCode2"/>
+							</label>
+						</form>
+					</div>
+					<!-- 交易记录 -->
+					<div class="tradeCheckDiv">
+						<p class="form-inline chooseArea" id="">
+							按订单状态查看
+							<select name="" id="tradeType" class="form-control">
+								<option value="1">已付款</option>
+								<option value="0">全部订单</option>
+								<option value="-2">未付款</option>
+							</select>
+							起始日期
+							<input type="text" class="form-control" id="tradeTime1"/>
+							截止日期
+							<input type="text" class="form-control" id="tradeTime2"/>
+							<input type="button" class="form-control" value="查询" id="tradeBtn"/>
+						</p>
+						<div class="col-lg-12 recDiv">
+							<table id="tradeTable">
+								<thead>
+									<tr>
+										<th data-field="company">	</th>
+										<th data-field="OrderCode">	</th>
+										<th data-field="amountMondy">	</th>
+										<th data-field="type">	</th>
+										<th data-field="funcType">	</th>
+										<th data-field="years">	</th>
+										<th data-field="status">	</th>
+										<th data-field="createTime">	</th>
+									</tr>
+								</thead>
+							</table>
+							<br/>
+							<p class="clearfix searchNo">
+								<button class="loadMoreTrade pull-right">加载更多</button>
+								<button class="loadAllTrade pull-right">已全部加载</button>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+		<script type="text/javascript" src="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+		<script src="../js/tab2.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/distpicker.data.js"></script>
+		<script type="text/javascript" src="../js/distpicker.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-table-zh-CN.min.js"></script>
+		<script type="text/javascript" src="../js/jspdf.min.js"></script>
+		<script type="text/javascript" src="../js/jquery.sha1.js"></script>
+		<script type="text/javascript" src="../js/jspdf.plugin.autotable.js"></script>
+		<script type="text/javascript" src="../js/tableExport.min.js"></script>
+		<script type="text/javascript" src="../js/laydate.js"></script>
+		<script type="text/javascript" src="../js/jquery.page.js"></script>
+		<script type="text/javascript" src="../js/bootstrap-select.min.js"></script>
+		<script type="text/javascript" src="../js/bootstrap3-typeahead.min.js"></script>
+		<script src="../js/selectivity-jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/change.js"></script>
+		<script src="../js/localResizeIMG.js" type="text/javascript" ></script>
+		<script type="text/javascript" src="../js/manger.js?ver=201801018"></script>
+		<script type="text/javascript" src="../js/zhaopin.js?ver=20181018"></script>
+		<script type="text/javascript" src="../js/shoufei.js?ver=20191219"></script>
+		<script type="text/javascript" src="../js/zhanghao.js?ver=20181018"></script>
+		<script type="text/javascript" src="../js/checkInfo.js?ver=20181018"></script>
+		<script class="resources library" src="../js/area.js" type="text/javascript"></script>
+		<script type="text/javascript" src="../js/searchnum.js"></script>
+		<script type="text/javascript">
+			_init_area();
+		</script>
+		<script type="text/javascript">
+			var Gid = document.getElementById;
+			var showArea = function() {
+				Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +
+					Gid('s_city').value + " - 县/区" +
+					Gid('s_county').value + "</h3>"
+				Gid('s_county').setAttribute('onchange', 'showArea()');
+			}
+		</script>
+	</body>
+</html>

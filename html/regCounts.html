@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="icon" href="../image/pic.ico" type="image/x-icon"/>
+  <title>批量注册</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/skin/default/layer.css">
+  <link rel="stylesheet" href="../css/regCounts.css">
+  <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+  <script type="text/javascript" src="../js/jszip.js"></script>
+  <script type="text/javascript" src="../js/xlsx.js"></script>
+ <script type="text/javascript" src="../js/angular.1.2.29.js"></script>
+</head>
+<body >
+<div class="top"><span class="pull-left">易企点批量注册账号</span></div>
+<div class="mainshow col-lg-offset-4 col-lg-4 col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8 col-xs-offset-1 col-xs-10">
+<div class="instr">
+  <p>支持通过excel来导入电话号码，excel只要按照给定的格式填写手机号码和姓名即可，点击下方的模板下载按钮即可下载模板。严格按照下面的图片填写。填写完成后点击选择文件，把填好的文件在上传就好,导入后只显示前十个手机号，但会把excel导入的全部号码邀请</p>
+  <img src="../image/QQ图片20180921160950.png" alt="">
+  <button id="downExample"><a href="http://47.94.173.253:8008/regDemo.xlsx">模板下载</a></button>
+</div>
+<input type="file" onchange="importf(this)"  id="daoru">
+  <h2 value=""></h2>
+  <h3>请您至少导入一组号码和姓名</h3>
+    <form name="myForm" novalidate>
+      <div class="cell" >
+          <input type="text" id="1" name="tel"  disabled="true"><br>
+          <input type="text" id="2" name="tel2" disabled="true"><br>
+          <input type="text" id="3" name="tel3"  disabled="true"><br>
+          <input type="text" id="4"  name="tel4"  disabled="true"><br>
+          <input type="text" id="5"  name="tel5" disabled="true"><br>
+          <input type="text" id="6"  name="tel6"  disabled="true"><br>
+          <input type="text" id="7"  name="tel7"  disabled="true"><br>
+          <input type="text" id="8"  name="tel8"  disabled="true"><br>
+          <input type="text" id="9"  name="tel9" disabled="true"><br>
+          <input type="text" id="10"  name="tel10"  disabled="true"><br>
+      </div>
+      <input type="button" id="submit" value="确认邀请">
+    </form>
+  </div>
+</div>
+<script type="text/javascript" src="../js/change.js"></script>
+<script type="text/javascript">
+            var wb;//读取完成的数据
+            var rABS = false; //是否将文件读取为二进制字符串
+            var dataTel
+            var dataAll = "";
+            function importf(obj) {//导入
+                if(!obj.files) {
+                    return;
+                }
+                var f = obj.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    var data = e.target.result;
+                    if(rABS) {
+                        wb = XLSX.read(btoa(fixdata(data)), {//手动转化
+                            type: 'base64'
+                        });
+                    } else {
+                        wb = XLSX.read(data, {
+                            type: 'binary'
+                        });
+                    }
+                    dataAll = JSON.stringify( XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]) );
+                     dataTel = JSON.parse(dataAll)
+                    for (var i = 0; i < 10; i++) {
+                      $('#'+(i+1)+'').val(dataTel[i].name+"  "+dataTel[i].phone)
+                    }
+                };
+                if(rABS) {
+                    reader.readAsArrayBuffer(f);
+                } else {
+                    reader.readAsBinaryString(f);
+                }
+            }
+            function fixdata(data) { //文件流转BinaryString
+                var o = "",
+                    l = 0,
+                    w = 10240;
+                for(; l < data.byteLength / w; ++l) o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w, l * w + w)));
+                o += String.fromCharCode.apply(null, new Uint8Array(data.slice(l * w)));
+                return o;
+            }
+      var dataM=   localStorage.getItem("GHY_MangerLogin");
+      if (dataM == null) {
+        window.close()
+      }else{
+          $('#submit').click(function() {
+            console.log(dataAll.length)
+            if ( dataAll.length == 0 ) {
+                layer.msg('请导入表格', {
+                                            time: 1000,
+                                          });
+            }else{
+                $.post(''+http_head+'/userashx/Account.ashx', {
+                  "json": dataAll
+                }, function(data) {
+                  var dataReg = JSON.parse(data)
+                  if ( dataReg.status == 200 ) {
+                    layer.msg(dataReg.msg, {
+                                            time: 1000,
+                                          });
+                  }else{
+                    layer.msg('格式有误，请重新编辑', {
+                                            time: 1000,
+                                          });
+                  }
+                });
+            }
+          });
+      }
+
+</script>
+</body>
+</html>

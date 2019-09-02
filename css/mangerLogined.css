@@ -1,0 +1,2094 @@
+.nav {
+	width: 100%;
+	height: 60px;
+	background-color: #000;
+	font-size: 30px;
+	border-bottom: 5px solid transparent;
+}
+
+.cover {
+	position: absolute;
+	left: 0px;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	background-color: #000;
+	opacity: 0.3;
+	z-index: 20;
+	display: none;
+}
+
+.contain {
+	min-width: 800px;
+	margin: 0 auto;
+}
+
+.nav ul li {
+	color: #fff;
+	font-size: 25px;
+	line-height: 55px;
+	width: 25%;
+	text-align: center;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.navRight {
+	text-align: center;
+}
+
+.navRight span {
+	display: inline-block;
+	color: #fff;
+	line-height: 60px;
+	font-size: 15px;
+	margin-right: 10px;
+}
+
+.navRight a {
+	font-size: 15px;
+	color: #fff;
+	line-height: 60px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.activeM {
+	border-bottom: 5px solid #f00;
+}
+
+.main,
+.zhaopinDiv,
+#zhanghaoManger,
+.shouFeiDiv,
+#checkInfoDiv {
+	width: 100%;
+}
+.zhaopinDiv,
+#zhanghaoManger,
+#checkInfoDiv,
+.orgnizeDiv,
+.recommendDiv,
+.courseDiv,
+.jskOrgDiv,
+.consultantDiv,
+.jskActDiv,
+.jskTrainDiv,
+.jskAdvisoryDiv,
+.jskLunboDiv{
+	display: none;
+}
+.recommendDiv,
+.courseDiv,
+.jskOrgDiv,
+.consultantDiv,
+.jskActDiv,
+.jskTrainDiv,
+.jskAdvisoryDiv,
+.jskLunboDiv{
+	height: 100%;
+	padding: 0 20px;
+}
+
+.mainLeft {
+	position: absolute;
+	left: 0;
+	top: 60px;
+	bottom: 0;
+	width: 200px;
+	background-color: #888;
+	padding: 40px 0 40px 0px;
+}
+
+.mainLeft p {
+	cursor: pointer;
+}
+
+.mainLeft .addManger,
+.mainLeft .lookManger,
+.mainLeft .lookCompany,
+.mainLeft .comConform,
+.mainLeft .addZhaopin,
+.mainLeft .lookZhaopin,
+.comTeacher,
+.infoMation,
+.lookZhanghao,
+.functionSet,
+.activeSet,
+.trySet,
+.tradeCheck,
+.lookMangerInfo,
+.comConformInfo,
+.comTeacherInfo,
+.workArea,
+.regCounts,
+.eqbuy,
+.eqbuyDemand,
+.regFastCompany,
+.spread,
+.activity,
+.orgnize,
+.recommend,
+.course,
+.jskOrg,
+.consultant,
+.jskAct,
+.jskTrain,
+.jskAdvisory,
+.jskLunbo,
+.advisory,
+.eqdLunbo{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	font-size: 16px;
+	padding-left: 20px;
+	margin: 0;
+}
+
+.addManger span,
+.lookManger span,
+.lookCompany span,
+.comConform span,
+.addZhaopin span,
+.lookZhaopin span,
+.comTeacher span,
+.infoMation span,
+.lookZhanghao span,
+.functionSet span,
+.activeSet span,
+.trySet span,
+.tradeCheck span,
+.lookMangerInfo span,
+.comConformInfo span,
+.comTeacherInfo span,
+.workArea span,
+.regCounts span,
+.eqbuy span,
+.eqbuyDemand span,
+.regFastCompany span {
+	font-size: 14px;
+	margin-right: 5px;
+}
+
+.active {
+	background-color: #fff;
+}
+
+.chooseDiv,
+.chooseCompanyTable,
+.proviceTable,
+.cityTable,
+.countryTable,
+.changeProDiv,
+.changeCityDiv,
+.changeArea,
+.changeInfoDiv,
+.changePicDiv,
+.choosePersonDiv,
+.chooseWorkAreaDiv {
+	display: none;
+	padding: 30px 50px;
+}
+
+#chooseForm label>span:nth-child(1),
+#chooseCompanyForm label>span:nth-child(1) {
+	display: inline-block;
+	width: 90px;
+}
+
+.bootstrap-select>button .caret {
+	display: none;
+}
+
+#chooseCompanyForm label .desc {
+	font-size: 12px;
+	color: #969aa3;
+}
+
+.addMangerDet {
+	background-color: #eee;
+	padding: 20px 0;
+	padding-left: 30px;
+	width: 60%;
+}
+
+.addMangerDet label>select {
+	display: inline-block;
+}
+
+.addMangerDet label span {
+	display: inline-block;
+	width: 80px;
+}
+
+.proviceTable span,
+.cityTable span,
+.countryTable span,
+.changeArea span,
+.changeCityDiv span,
+.changeProDiv span {
+	display: inline-block;
+	width: 200px;
+}
+
+.changeInfoDiv span,
+.choosePersonDiv span {
+	display: inline-block;
+	width: 80px;
+}
+
+.addMangerDet form label .cityChoose,
+.addMangerDet form label .provideChoose {
+	width: 400px;
+}
+
+.addMangerDet form label .countyChoose {
+	width: 300px;
+}
+
+.addMangerDet form label input,
+.addMangerDet form label select {
+	height: 30px;
+	padding: 3px 12px;
+}
+
+.addMangerDet form label {
+	height: 50px;
+	display: flex;
+	align-items: center;
+}
+
+#addPerson>div {
+	margin: 10px 0;
+	display: flex;
+}
+
+#addPerson>div div:nth-child(1) span {
+	width: 200px;
+	display: inline-block;
+	font-weight: bolder;
+}
+
+#addPerson>div div:nth-child(2) {
+	width: 200px;
+	text-align: center;
+}
+
+#addPerson>div div:nth-child(2) img {
+	width: 90%;
+	border-radius: 10px;
+}
+
+.idcardHand>div:nth-child(1) {
+	width: 100px;
+}
+
+.imglist1,
+.imglist3,
+.imglist2 {
+	text-align: center;
+}
+
+.imglist1 input,
+.imglist3 input,
+.imglist2 input,
+.imglist4 input {
+	background-color: #29e;
+	border: none;
+	border-radius: 5px;
+	padding: 10px 15px;
+	color: #fff;
+	outline: none;
+	margin-bottom: 10px;
+}
+
+.regTips {
+	color: #f00;
+	font-size: 14px;
+}
+
+.regBtn,
+.changeBtn,
+.addZhanghaoBtn,
+.changeHeadImg,
+.searchBtn {
+	padding: 8px 25px;
+	background-color: #29e;
+	margin-left: 300px;
+	font-size: 20px;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+}
+
+.addZhanghaoBtn {
+	margin-left: 0
+}
+
+#powderCity,
+#powderProvice,
+#powderCountry {
+	display: none;
+}
+
+#zhanghaoTable tr td img {
+	width: 60px;
+}
+
+.infoDet {
+	background-color: #eee;
+	padding: 20px;
+}
+
+#infoShow label {
+	height: 50px;
+	display: block;
+}
+
+#infoShow label input {
+	height: 30px;
+	padding: 3px 12px;
+}
+
+#infoShow label>span {
+	width: 80px;
+	display: inline-block;
+}
+
+.addMangerDet {
+	display: none;
+}
+
+#infiDiv,
+.changeTable {
+	display: none;
+}
+
+.changeTable {
+	padding: 30px 0;
+}
+
+.changeTable p {
+	height: 30px;
+	padding: 0 20px;
+}
+
+.changeTable p span {
+	display: inline-block;
+	width: 80px;
+}
+
+.changeTable p select {
+	display: inline-block;
+}
+
+#changeProvice,
+#changeCity,
+#changeCountry {
+	display: none;
+}
+
+.idcardFront>div:nth-child(1) {
+	width: 100px;
+}
+
+.idcardFront2>div:nth-child(2) {
+	width: 400px;
+	text-align: center;
+}
+
+.idcardFront4>div:nth-child(2) {
+	width: 400px;
+	text-align: center;
+}
+
+.idcardFront2>div:nth-child(2) img {
+	width: 90%;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.idcardFront4>div:nth-child(2) img {
+	width: 90%;
+	border-radius: 10px;
+	display: inline-block;
+}
+
+.loadArea p {
+	text-align: center;
+}
+
+.loadArea p button {
+	width: 500px;
+	height: 50px;
+	background-color: #29e;
+	color: #fff;
+	border-radius: 5px;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	display: none;
+}
+
+.loadArea p .loadNo {
+	background-color: #A9A9A9;
+	cursor: default;
+}
+
+.choosePersonDiv form label {
+	display: block;
+}
+
+.choosePersonDiv form label>select {
+	display: inline-block;
+}
+
+.choosePersonDiv form span>select {
+	display: inline-block;
+	width: 80px;
+}
+
+.btnArea2 button,
+.btnArea3 button,
+.btnArea4 button{
+	width: 44%;
+	height: 50px;
+	line-height: 50px;
+	background-color: #29e;
+	color: #fff;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+	outline: none;
+	margin: 2.5%;
+	display: none;
+}
+
+/*讲师详情*/
+.teacherDetailsDiv,
+.refuseDiv {
+	display: none;
+	margin: 20px;
+}
+
+.teacherDetailsDiv label {
+	width: 49%;
+	line-height: 50px;
+}
+
+.teacherDetailsDiv label span:nth-child(1) {
+	display: inline-block;
+	width: 60px;
+	color: #828282;
+}
+
+.teacherDetailsDiv form>p {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.teaImgShow img {
+	width: 350px;
+	border-radius: 20px;
+	height: 200px;
+	margin: 10px 0;
+	margin-right: 20px;
+}
+
+.mainRight {
+	position: absolute;
+	left: 200px;
+	top: 60px;
+	right: 0px;
+	bottom: 0px;
+	font-family: 微软雅黑;
+	padding: 30px 20px 0 20px;
+	overflow: auto;
+}
+
+.chooseTime,
+.chooseTime2,
+.chooseTime3,
+.chooseTime4 {
+	margin-left: 10%;
+	margin-bottom: 20px;
+}
+
+#test4,
+#test5,
+#test6,
+#test7,
+#testFast {
+	width: 275px;
+	height: 33px;
+	padding: 6px 12px;
+	font-size: 14px;
+}
+
+#result {
+	display: inline-block;
+}
+
+.time1,
+.time2,
+.time3 {
+	padding: 6px 12px;
+	font-size: 14px;
+	font-weight: 400;
+	color: #555;
+	text-align: center;
+	background-color: #eee;
+	border: 1px solid #ccc;
+	margin-left: -5px;
+	outline: none;
+	cursor: pointer;
+	display: none;
+}
+
+.lookBtn,
+.lookComBtn,
+.downComBtn,
+.downBtn,
+.lookConformBtn,
+.downConformBtn,
+.choose,
+.chooseCompany,
+.searchWorkBtn {
+	font-size: 16px;
+	color: #fff;
+	line-height: 25px;
+	text-align: center;
+	border: none;
+	padding: 2px 20px;
+	border-radius: 3px;
+	background-color: #29e;
+	margin-left: 30px;
+	display: inline-block;
+	height: 33px;
+}
+
+.downComBtn,
+.downBtn,
+.downConformBtn {
+	background-color: green;
+}
+
+#chakanRegTable tr th,
+#chakanRegTable tr td,
+#chakanRegComTable tr th,
+#chakanRegComTable tr td,
+#comConformTable tr th,
+#comConformTable tr td {
+	text-align: center;
+}
+
+.more,
+.refuse,
+.agree,
+.openArea,
+.forbidden,
+.option,
+.changePic,
+.changeInfo {
+	color: #29e;
+	font-family: "微软雅黑";
+	margin: 0 5px;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.more:hover {
+	background-color: #fff;
+	color: blue;
+	transition: all .5s;
+}
+
+.companyDetails {
+	margin: 20px 0;
+}
+
+.companyDetails .photo {
+	width: 400px;
+	margin: 40px;
+}
+
+.companyDetails .photo img,
+.companyDetails .photo p {
+	width: 100%;
+}
+
+.companyDetails .photo img {
+	border-radius: 10px;
+}
+
+.companyDetails .photo p {
+	text-align: center;
+	font-size: 20px;
+	line-height: 30px;
+	height: 30px;
+}
+
+.companyShow {
+	width: 100%;
+}
+
+.companyShow p {
+	width: 50%;
+	padding: 0 50px;
+	height: 40px;
+	line-height: 40px;
+}
+
+.companyShow p span:nth-child(1) {
+	width: 160px;
+	display: inline-block;
+}
+
+.companyShow p span:nth-child(2) {
+	color: #828282
+}
+
+#teacherApplyTable tr th,
+#teacherApplyTable tr td {
+	text-align: center;
+	vertical-align: middle;
+}
+
+#teacherApplyTable tr td img {
+	width: 60px;
+}
+
+.chooseTime3 select,
+.chooseTime4 select {
+	display: inline-block;
+}
+
+#teacherApplyTable tr td span {
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.checkFastRegDiv {
+	display: none;
+	;
+	margin: 20px;
+}
+
+.checkFastRegDiv p {
+	height: 40px;
+	line-height: 40px;
+}
+
+.checkFastRegDiv p span:nth-child(1) {
+	display: inline-block;
+	width: 70px;
+	color: #c1c1c1;
+}
+
+.checkFastRegDiv img {
+	width: 400px;
+	margin-left: 80px;
+	margin-bottom: 30px
+}
+
+.checkFastRegDiv p button {
+	background-color: green;
+	color: #fff;
+	font-size: 16px;
+	width: 100px;
+	border: none;
+	outline: none;
+}
+
+.checkFastRegDiv p button:nth-child(1) {
+	margin-left: 100px;
+	margin-right: 150px;
+	background-color: #f00;
+}
+
+/********************************************************************************************/
+.lookMangerDet,
+.lookCompanyDet,
+.comConformDet,
+.companyDetails,
+.addZhaoPin,
+.lookCompanyInfoDet,
+.lookMangerInfoDet,
+.workAreaDiv,
+.regCountsDet,
+.regFastCompanyDiv {
+	display: none;
+}
+
+.checkArea p {
+	width: 50%;
+	text-align: center;
+}
+
+.checkArea p button {
+	padding: 12px 40px;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	border-radius: 5px;
+	color: #fff;
+	background-color: green;
+}
+
+.checkArea p .refuse,
+.refused {}
+
+#message {
+	width: 80%;
+	margin: 5px 10%;
+	min-height: 100px;
+}
+
+.pass,
+.noPass,
+.checkArea {
+	display: none;
+}
+
+.pass p,
+.noPass p {
+	width: 100%;
+	text-align: center;
+	font-size: 25px;
+	margin-bottom: 30px;
+}
+
+.noPass p {
+	color: #f00;
+}
+
+.pass p {
+	color: green;
+}
+
+/******************************************招聘CSS*****************************************/
+.zhaopinForm label span {
+	width: 100px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.zhaopinForm label input {
+	height: 30px;
+	padding-left: 10px;
+	width: 200px;
+}
+
+.zhaopinForm label textarea {
+	width: 600px;
+	height: 300px;
+	padding: 10px;
+	font-size: 16px;
+	letter-spacing: 2px;
+	line-height: 22px;
+}
+
+.zhaopinBtn {
+	color: #fff;
+	background-color: #29e;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	margin: 20px auto;
+	margin-left: 200px;
+	width: 160px;
+}
+
+#postDetailsTable tr th,
+#postDetailsTable tr td {
+	text-align: center;
+}
+
+#postDetailsTable tr td:last-child {
+	cursor: pointer;
+}
+
+#page {
+	font-size: 12px;
+}
+
+.makeSureDel {
+	display: none;
+	text-align: center;
+	margin: 20px;
+}
+
+/******************************************收费CSS*****************************************/
+.activeSetDiv,
+.trySetDiv,
+.tradeCheckDiv,
+.eqbuyDiv,
+.eqbuyDemandDiv,
+.addDemandDiv,
+.addProductDiv,
+.deleteDemandDiv,
+.deleteProductDiv,
+.activityDetailsDiv {
+	display: none;
+}
+
+.deleteDemandDiv,
+.deleteProductDiv,
+.activityDetailsDiv {
+	margin: 20px;
+}
+
+.deleteDemandDiv p,
+.deleteProductDiv p {
+	text-align: center;
+	font-size: 20px;
+}
+
+.addDemandDiv,
+.addProductDiv {
+	margin: 20px;
+	padding-left: 50px;
+}
+
+.addFunctionBtn,
+#addDemandBtn,
+#addProductBtn {
+	color: #fff;
+	background-color: #29e;
+	padding: 6px 15px;
+	border: none;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.addFunctionDiv,
+.changeFunctionDiv {
+	display: none;
+	margin: 20px;
+}
+
+#addModel label span,
+#changeModel label span {
+	display: inline-block;
+	width: 80px;
+}
+
+#addModel .describ span {
+	vertical-align: top;
+}
+
+#addModel2 .describ2 span {
+	vertical-align: top;
+}
+
+#mangerTable tr td:nth-child(1),
+#mangerTable tr td:nth-child(2),
+#mangerTable tr td:nth-child(6) {
+	min-width: 153px;
+}
+
+.changeModel,
+.removeModel {
+	margin: 0 5px;
+	color: #29e;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.removeModel {
+	color: #f00;
+}
+
+.deleteDiv {
+	display: none;
+	text-align: center;
+	margin: 35px auto;
+	font-size: 20px;
+}
+
+.chooseArea input {
+	margin: 0 10px;
+}
+
+.chooseArea #tradeBtn {
+	background-color: #29e;
+	color: #fff;
+	outline: none;
+	padding: 0 20px;
+}
+
+#chooseActivityType {
+	margin-left: 20px;
+}
+
+.loadMoreTrade,
+.loadAllTrade {
+	width: 300px;
+	height: 50px;
+	border-radius: 10px;
+	border: none;
+	outline: none;
+	background-color: #29e;
+	color: #fff;
+	display: none;
+}
+
+.loadAllTrade {
+	background-color: #a9a9a9;
+	cursor: default;
+}
+
+#comConformInfoTable tr td img {
+	width: 100px;
+}
+
+.searchNo {
+	display: flex;
+	justify-content: center;
+}
+
+.eqbuyDiv,
+.eqbuyDemandDiv {
+	padding: 10px 20px;
+}
+
+.eqbuyDiv label,
+.eqbuyDemandDiv label {
+	display: flex;
+	height: 50px;
+}
+
+.eqbuyDiv label span:nth-child(1),
+.eqbuyDemandDiv label span:nth-child(1) {
+	display: inline-block;
+	width: 10px;
+	color: #f00;
+}
+
+.eqbuyDiv label span:nth-child(2),
+.eqbuyDemandDiv label span:nth-child(2) {
+	display: inline-block;
+	width: 100px;
+}
+
+#addImgBtn {
+	background-color: #29e;
+	padding: 10px 15px;
+	color: #fff;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+}
+
+.uploadImgDiv {
+	display: none;
+	margin: 20px;
+}
+
+#hrefBtn,
+#demandhrefBtn {
+	height: 34px;
+	background-color: #29e;
+	padding: 0px 20px;
+	margin-left: 20px;
+	color: #fff;
+	border: none;
+	outline: none;
+}
+
+#pic5 {
+	background-color: #29e;
+	color: #fff;
+	margin-left: 26px;
+	padding: 8px 20px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+}
+
+#pic5Img {
+	width: 400px;
+	border-radius: 20px;
+}
+
+.eqbuyDiv p>input,
+.eqbuyDemandDiv p>input {
+	background-color: #29e;
+	padding: 10px 20px;
+	color: #fff;
+	border: none;
+	outline: none;
+	font-size: 20px;
+	border-radius: 10px;
+}
+
+#demandTable tr td span,
+#productTable tr td span {
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+span {
+	margin: 0 5px;
+	cursor: pointer;
+}
+
+.agreeActivityDiv,
+.refuseActivityDiv {
+	display: none;
+	margin: 20px;
+}
+
+#refused,
+#refuse {
+	color: #f00
+}
+
+#activityTable tr td #agreed,
+#activityTable tr td #refused {
+	cursor: default;
+}
+
+/*查询CSS*/
+.btnArea,
+.combtnArea,
+.workbtnArea{
+	width: 250px;
+}
+.btnJskArea,
+.btnCourseArea,
+.btnOrgArea,
+.btnCstArea,
+.btnActArea,
+.btnTrainArea,
+.btnAdvisoryArea,
+.btnLunboArea,
+.jstjArea,
+.jstjArea2,
+.advArea,
+.advArea2,
+.actmArea{
+	width: 100%;
+	height: 35px;
+	margin-top: 30px;
+	padding-right: 240px;
+}
+.recBtnPrve{
+	/* margin-right: 60px!important; */
+}
+.btnArea button,
+.combtnArea button,
+.workbtnArea button ,
+.btnJskArea button,
+.btnCourseArea button,
+.btnOrgArea button,
+.btnCstArea button,
+.btnActArea button,
+.btnTrainArea button,
+.btnAdvisoryArea button,
+.btnLunboArea button,
+.jstjArea button,
+.jstjArea2 button,
+.advArea button,
+.advArea2 button,
+.actmArea button{
+	background-color: #29e;
+	color: #fff;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	height: 35px;
+	width: 100px;
+	font-size: 15px;
+	margin: 0 10px;
+	display: none;
+}
+.show-btn{
+	display: block!important;
+	transition: all 0.5s
+}
+#chakanInfoTable tr td span {
+	cursor: pointer;
+}
+
+.zhanghaoStatusDiv {
+	display: none;
+	padding: 30px 50px;
+}
+
+.jiefengStatusDiv {
+	display: none;
+	padding: 10px 0;
+}
+
+.jiefengStatusDiv p {
+	text-align: center;
+	font-size: 20px;
+}
+
+.zhanghaoStatusDiv label span:nth-child(1) {
+	display: inline-block;
+	width: 100px;
+}
+
+.chooseWorkAreaDiv label {
+	min-height: 50px;
+	display: flex;
+}
+
+.chooseWorkAreaDiv label:nth-child(1) {
+	margin-bottom: 20px;
+}
+
+.chooseWorkAreaDiv label span:nth-child(1) {
+	display: inline-block;
+	width: 10px;
+	color: #f00;
+}
+
+.chooseWorkAreaDiv label span:nth-child(2) {
+	display: inline-block;
+	width: 100px;
+}
+
+#workAreaTable tr td:nth-child(5) {
+	max-width: 350px
+}
+
+#workAreaTable tr td:nth-child(8) {
+	max-width: 200px
+}
+
+#workAreaTable tr td span {
+	cursor: pointer;
+}
+
+.deleteWorkArea {
+	display: none;
+	padding: 20px;
+}
+
+.deleteWorkArea p {
+	font-size: 20px;
+	text-align: center;
+}
+
+#chakanInfoTable tr td:nth-child(3) {
+	width: 100px;
+}
+
+/* 查询账户-个人信息 */
+.thcont,
+.thcontrc {
+	display: flex;
+	margin-bottom: 0;
+}
+.peosonTable{
+	width: auto;
+}
+.thcont li,
+.thcontrc li {
+	padding: 8px;
+	border-bottom: 1px solid #ddd;
+	line-height: 24px;
+	vertical-align: top;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	text-align: center;
+	box-sizing: border-box;
+	border-left: 1px solid #ddd;
+	background-color: #337ab7;
+	color: white;
+}
+
+.thcont li:hover,
+.thcontrc li:hover {
+	background-color: #29e;
+}
+
+#chakanInfoTable thead,
+#comConformInfoTable thead {
+	display: none !important;
+}
+
+#chakanInfoTable,
+#comConformInfoTable {
+	padding: 0;
+	border-bottom: none !important;
+}
+
+#chakanInfoTable tbody tr:last-child {
+	border-bottom: 1px solid #ddd;
+}
+
+#chakanInfoTable tbody tr td:nth-child(1),
+.thcont li:nth-child(1) {
+	min-width: 71px;
+	max-width: 71px;
+	border-left: none;
+}
+
+#chakanInfoTable tbody tr td:nth-child(2),
+.thcont li:nth-child(2) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(3),
+.thcont li:nth-child(3) {
+	min-width: 83px;
+	max-width: 83px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(4),
+.thcont li:nth-child(4) {
+	min-width: 138px;
+	max-width: 138px;
+
+}
+
+#chakanInfoTable tbody tr td:nth-child(5),
+.thcont li:nth-child(5) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(6),
+.thcont li:nth-child(6) {
+	min-width: 108px;
+	max-width: 108px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(7),
+.thcont li:nth-child(7) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(8),
+.thcont li:nth-child(8) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(9),
+.thcont li:nth-child(9) {
+	min-width: 95px;
+	max-width: 95px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(10),
+.thcont li:nth-child(10) {
+	min-width: 95px;
+	max-width: 95px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(11),
+.thcont li:nth-child(11) {
+	min-width: 87px;
+	max-width: 87px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(12),
+.thcont li:nth-child(12) {
+	min-width: 246px;
+	max-width: 246px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(13),
+.thcont li:nth-child(13) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(14),
+.thcont li:nth-child(14) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(15),
+.thcont li:nth-child(15) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(16),
+.thcont li:nth-child(16) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(17),
+.thcont li:nth-child(17) {
+	min-width: 73px;
+	max-width: 73px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(18),
+.thcont li:nth-child(18) {
+	min-width: 115px;
+	max-width: 115px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(19),
+.thcont li:nth-child(19) {
+	min-width: 171px;
+	max-width: 171px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(20),
+.thcont li:nth-child(20) {
+	min-width: 100px;
+	max-width: 100px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(21),
+.thcont li:nth-child(21) {
+	min-width: 108px;
+	max-width: 108px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(22),
+.thcont li:nth-child(22) {
+	min-width: 179px;
+	max-width: 179px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(23),
+.thcont li:nth-child(23) {
+	min-width: 90px;
+	max-width: 90px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(24),
+.thcont li:nth-child(24) {
+	min-width: 101px;
+	max-width: 101px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(25),
+.thcont li:nth-child(25) {
+	min-width: 185px;
+	max-width: 185px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(26),
+.thcont li:nth-child(26) {
+	min-width: 143px;
+	max-width: 143px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(27),
+.thcont li:nth-child(27) {
+	min-width: 70px;
+	max-width: 70px;
+}
+
+#chakanInfoTable tbody tr td:nth-child(28),
+.thcont li:nth-child(28) {
+	min-width: 79px;
+	max-width: 79px;
+	border-right: none;
+}
+
+.zz {
+	color: #555 !important;
+}
+
+.srhyq,
+.srhxm,
+.srhdh,
+.srhxb,
+.srhcs,
+.srhhk,
+.srhxz,
+.srhsg,
+.srhhf,
+.srhtz,
+.srhxx,
+.srhxy,
+.srhzz,
+.srhxq,
+.srhqq,
+.srhwx,
+.srhyx,
+.srhjj,
+.srhwy,
+.srhby,
+.srhzy,
+.srhwh,
+.srhzc,
+.srhmz,
+.srhmc,
+.srhjc,
+.srhrs,
+.srhyx2,
+.srhfr,
+.srhdh2,
+.srhxz2,
+.srhzcd,
+.srhsj {
+	display: none;
+	height: 100%;
+}
+
+.srhyq form,
+.srhxm form,
+.srhdh form,
+.srhxb form,
+.srhcs form,
+.srhhk form,
+.srhxz form,
+.srhsg form,
+.srhhf form,
+.srhtz form,
+.srhxx form,
+.srhxy form,
+.srhzz form,
+.srhxq form,
+.srhqq form,
+.srhwx form,
+.srhyx form,
+.srhjj form,
+.srhwy form,
+.srhby form,
+.srhzy form,
+.srhwh form,
+.srhzc form,
+.srhmz form,
+.srhmc form,
+.srhjc form,
+.srhrs form,
+.srhyx2 form,
+.srhfr form,
+.srhdh2 form,
+.srhxz2 form,
+.srhzcd form {
+	display: flex;
+	justify-content: center;
+	padding-top: 10px;
+}
+
+.no-records-found {
+	width: 1648px;
+	display: flex;
+	justify-content: center;
+}
+
+.no-records-found td {
+	min-width: 300px !important;
+	display: block !important;
+}
+
+.layui-layer-page .layui-layer-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.layui-layer-page .layui-layer-btn0 {
+	background-color: #1e9fff !important;
+	color: white !important;
+}
+
+.layui-layer-lan .layui-layer-title {
+	background: #4476A7;
+	color: #fff;
+	border: none;
+}
+
+.chooseDiv {
+	width: 100% !important;
+}
+
+.layui-layer-title {
+	background-color: #4476A7 !important;
+	color: #fff !important;
+	border: none;
+}
+
+.srhmz .mz {
+	position: relative;
+}
+
+.srhmz .mz .dropdown-menu {
+	position: absolute;
+	top: 0;
+	height: 250px;
+}
+
+.srhmz .mz .dropdown-menu li a:hover {
+	background-color: #1e9fff;
+	color: white;
+}
+
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+	color: #333;
+	background-color: white;
+}
+
+.srhxz form div div,
+.srhzcd form div div {
+	width: 216px !important;
+}
+
+.srhxz form div div select,
+.srhzcd form div div select {
+	width: 100% !important;
+}
+
+.layui-layer-content form label span {
+	display: block;
+	margin-left: 0;
+	margin-bottom: 10px;
+}
+
+.layui-layer-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#distpicker,
+#distpicker2 {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+#distpicker span,
+#distpicker2 span {
+	display: block;
+	margin: 0px 0 10px 0;
+	width: 216px;
+}
+
+#distpicker div button,
+#distpicker2 div button {
+	margin-top: 10px;
+}
+
+/* 查询账号-企业信息*/
+#comConformInfoTable tbody tr td:nth-child(1),
+.thcontrc li:nth-child(1) {
+	border-left: none;
+	min-width: 71px;
+	max-width: 71px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(2),
+.thcontrc li:nth-child(2) {
+	min-width: 100px;
+	max-width: 100px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(2) img {
+	width: 60%;
+}
+
+#comConformInfoTable tbody tr td:nth-child(3),
+.thcontrc li:nth-child(3) {
+	min-width: 199px;
+	max-width: 199px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(4),
+.thcontrc li:nth-child(4) {
+	min-width: 199px;
+	max-width: 199px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(5),
+.thcontrc li:nth-child(5) {
+	min-width: 87px;
+	max-width: 87px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(6),
+.thcontrc li:nth-child(6) {
+	min-width: 156px;
+	max-width: 156px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(7),
+.thcontrc li:nth-child(7) {
+	min-width: 87px;
+	max-width: 87px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(8),
+.thcontrc li:nth-child(8) {
+	min-width: 108px;
+	max-width: 108px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(9),
+.thcontrc li:nth-child(9) {
+	min-width: 87px;
+	max-width: 87px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(10),
+.thcontrc li:nth-child(10) {
+	min-width: 115px;
+	max-width: 115px;
+}
+
+#comConformInfoTable tbody tr td:nth-child(11),
+.thcontrc li:nth-child(11) {
+	min-width: 439px;
+	max-width: 439px;
+}
+
+/* 推广 */
+.cd-tabs {
+	margin-left: 20px;
+	width: 100% !important;
+	padding-left: 0px !important;
+	margin-top: 0;
+}
+
+.recDiv {
+	padding-left: 0px !important;
+}
+
+.cd-tabs-content {
+	width: 100% !important;
+}
+
+.cd-tabs-content li {
+	padding: 0;
+}
+
+.cd-tabs-navigation li {
+	/* background-color: #f7ae16; */
+	color: white;
+}
+
+.cd-tabs nav {
+	display: flex;
+	align-items: center;
+	overflow: hidden;  
+}
+
+.cd-tabs nav span {
+	width: 100px;
+	margin-bottom: 5px;
+
+	left: -100px;
+	text-align: right;
+	color: #666;
+	height: 33px;
+	line-height: 33px;
+	font-weight: bold;
+}
+
+.cd-tabs-navigation a.selected {
+	background-color: #29e !important;
+	color: white;
+	transition: all .5s;
+}
+
+.cd-tabs-navigation a.selected:hover {
+	color: white;
+}
+
+.cd-tabs-navigation a {
+	height: 45px;
+	line-height: 45px;
+	width: 120px;
+	text-align: center;
+	font-size: 14px;
+	padding: 0 30px;
+	text-decoration: none;
+	color: darkgray;
+}
+.advisoryDiv .cd-tabs-navigation a{
+	width: 130px;
+}
+.hyitemsAdv .selectivity-dropdown{
+    left: 120px!important
+}
+.hyitemsAdv{
+	width: 198px
+}
+/* 2.添加 */
+.addTeacherRec,.addJskTeacherRec,.addTeacherAdv{
+	display: none;
+}
+
+.addTeacherSort,.addTeacherSortAdv {
+	display: none;
+	/* margin-top: -300px; */
+}
+.addActDiv,.addActSortDiv,.addOrgDiv,.addOrgSortDiv,.addCourseDiv,.addJskOrgDiv,.addConsultantDiv,.addJskActDiv,.addJskTrainDiv,.addJskAdvisoryDiv,.addJskLbDiv,.addeqdLbDiv,.changeImgDiv,.changeImgeqd{
+	width: 60%;
+}
+.addTeacherRec label,
+.addTeacherAdv label,
+.addTeacherSort label,
+.addTeacherSortAdv label,
+.addActDiv label,
+.addActSortDiv label,
+.addOrgDiv label,
+.addOrgSortDiv label,
+.addJskTeacherRec label,
+.addCourseDiv label,
+.addJskOrgDiv label,
+.addConsultantDiv label,
+.addJskActDiv label,
+.addJskTrainDiv label,
+.addJskAdvisoryDiv label,
+.addJskLbDiv label,
+.addeqdLbDiv label,
+.changeImgDiv label,
+.changeImgeqd label{
+	width: 100%;
+	margin-top: 20px;
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.addTeacherRec label span,
+.addTeacherAdv label span,
+.addTeacherSort label span,
+.addTeacherSortAdv label span,
+.addActDiv label span,
+.addActSortDiv label span,
+.addOrgDiv label span,
+.addOrgSortDiv label span,
+.addJskTeacherRec label span,
+.addCourseDiv label span,
+.addJskOrgDiv label span,
+.addConsultantDiv label span,
+.addJskActDiv label span,
+.addJskTrainDiv label span,
+.addJskAdvisoryDiv label span,
+.addJskLbDiv label span,
+.addeqdLbDiv label span,
+.changeImgDiv label span,
+.changeImgeqd label span{
+	display: inline-block !important;
+}
+
+.addTeacherRec label span:nth-child(1),
+.addTeacherSortAdv label span:nth-child(1),
+.addTeacherAdv label span:nth-child(1),
+.addTeacherSort label span:nth-child(1),
+.addActDiv label span:nth-child(1),
+.addActSortDiv label span:nth-child(1),
+.addOrgDiv label span:nth-child(1),
+.addOrgSortDiv label span:nth-child(1),
+.addJskTeacherRec label span:nth-child(1),
+.addCourseDiv label span:nth-child(1),
+.addJskOrgDiv label span:nth-child(1),
+.addConsultantDiv label span:nth-child(1),
+.addJskActDiv label span:nth-child(1),
+.addJskTrainDiv label span:nth-child(1),
+.addJskAdvisoryDiv label span:nth-child(1),
+.addJskLbDiv label span:nth-child(1),
+.addeqdLbDiv label span:nth-child(1),
+.changeImgDiv label span:nth-child(1),
+.changeImgeqd label span:nth-child(1){
+	width: 10px;
+	color: #f00;
+}
+
+.addTeacherRec label span:nth-child(2),
+.addTeacherAdv label span:nth-child(2),
+.addTeacherSortAdv label span:nth-child(2),
+.addTeacherSort label span:nth-child(2),
+.addActDiv label span:nth-child(2),
+.addActSortDiv label span:nth-child(2),
+.addOrgDiv label span:nth-child(2),
+.addOrgSortDiv label span:nth-child(2),
+.addJskTeacherRec label span:nth-child(2),
+.addCourseDiv label span:nth-child(2),
+.addJskOrgDiv label span:nth-child(2),
+.addConsultantDiv label span:nth-child(2),
+.addJskActDiv label span:nth-child(2),
+.addJskTrainDiv label span:nth-child(2),
+.addJskAdvisoryDiv label span:nth-child(2),
+.addJskLbDiv label span:nth-child(2),
+.addeqdLbDiv label span:nth-child(2),
+.changeImgDiv label span:nth-child(2),
+.changeImgeqd label span:nth-child(2){
+	width: 100px;
+}
+
+.searchTeacher,
+.searchTeacher2,
+.searchAdvTeacher,
+.searchJskTeacher,
+.searchCstTeacher{
+	margin-left: 10px;
+}
+
+.preImg,
+.preImg2,
+.preImgAdv,
+.preImgAdvSort,
+.preImgJsk,
+.preImgCst,
+.preImgLb,
+.preImgLb2,
+.preImgLb3,
+.preImgLb4{
+	max-width: 200px;
+	margin: 10px 0 20px 120px;
+	border: 1px dashed silver;
+	padding: 10px;
+	display: inline-block;
+	overflow: hidden;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#showImg,
+#showImg2,
+#showImgAdv,
+#showImgAdvSort,
+#showImgJsk,
+#showImgCst,
+#showImgLb,
+#showImgLb2,
+#showImgLb3,
+#showImgLb4{
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.headPic{
+	width: 52px;
+}
+.lunboPic{
+	width: 120px;
+}
+
+.realImg,
+.realImg2,
+.realImgAdv,
+.realImgJsk,
+.realImgCst,
+.realImgAdvSort,
+.realImgLb{
+	display: none;
+}
+/* 添加 */
+.addRecTeacher,
+.addAdvTeacher,
+.addSortTeacher,
+.addSortAdvTeacher,
+.addAct,
+.addActSort,
+.addOrg,
+.addOrgSort,
+.addJskRec,
+.addCourse,
+.addJskOrg,
+.addJskCst,
+.addJskAct,
+.addJskTrain,
+.addJskAdvisory,
+.addJskLunbo,
+.addEqdLb{
+	font-size: 14px;
+	color: #fff;
+	line-height: 25px;
+	text-align: center;
+	border: none;
+	padding: 2px 16px;
+	border-radius: 3px;
+	background-color: #29e;
+	display: inline-block;
+	height: 33px;
+	margin: 30px 0;
+}
+.addJskRec,.addCourse,.addJskOrg,.addJskCst,
+.addJskAct,.addJskTrain,.addJskAdvisory,.addJskLunbo{
+	margin-top: 0!important;
+}
+.addAct {
+	margin: 30px 0 30px 0;
+}
+
+.monthNum,
+.monthNum2 {
+	position: absolute;
+	right: 90px;
+	top: 8px;
+}
+.monthNum3{
+	position: absolute;
+	right: 45px;
+	top: 8px;	
+}
+.monthNum4{
+	position: absolute;
+	right: 45px;
+	top: 8px;	
+}
+.monthNum5{
+	position: absolute;
+	right: 165px;
+	top: 8px;	
+}
+.spreadDiv,
+.advisoryDiv,
+.addTeacherSort,
+.addTeacherSortAdv,
+.addTeacherRec,
+.addTeacherAdv,
+.activityDiv,.addActDiv,
+.addActSortDiv,
+.addOrgDiv,
+.addOrgSortDiv,
+.addCourseDiv,
+.addJskOrgDiv,
+.addConsultantDiv,
+.addJskActDiv,
+.addJskTrainDiv,
+.addJskAdvisoryDiv,
+.addJskLbDiv,
+.addeqdLbDiv,
+.changeImgDiv,
+.eqdLunboDiv,
+.eqdDel,
+.changeImgeqd{
+	display: none;
+}
+.eqdDel p{
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+.addOrgSortDiv,.addActSortDiv{
+	margin-top: -200px;
+}
+/* 插件样式修改 */
+.hyitems,.hyitems2,.hyitems3 {
+	width: 198px;
+	height: 33px;
+	position: relative;
+}
+
+.selectivity-multiple-selected-item {
+	background-color: #0344aa !important;
+}
+
+.selectivity-dropdown {
+	color: #656565;
+	overflow: hidden;
+	position: absolute;
+	left: 0 !important;
+	top: 33px !important;
+}
+
+.highlight {
+	background-color: #0344aa !important;
+}
+
+.selectivity-single-selected-item {
+	width: 100% !important;
+	color: white !important;
+	background-color: #0344aa !important;
+	height: 33px;
+	padding: 0 10px;
+	line-height: 33px;
+	border-radius: 2px;
+	display: block;
+	text-align: center;
+}
+
+.selectivity-single-result-container {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+}
+
+.selectivity-single-select {
+	padding: 0;
+	max-height: 33px;
+	overflow: hidden;
+	line-height: 33px;
+}
+
+.selectivity-results-container {
+	width: 277px;
+}
+
+.selectivity-results-container div {
+	height: 36px;
+	line-height: 36px;
+	padding: 0 7px;
+}
+
+.selectivity-search-input-container {
+	padding: 0 7px;
+	height: 34px;
+	line-height: 34px;
+}
+
+.selectivity-placeholder {
+	padding: 0 10px;
+}
+
+.fa-sort-desc {
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+	border-top: 4px solid black;
+	top: 15px;
+}
+
+.fa-remove::before,
+.fa-remove::after {
+	content: '';
+	position: absolute;
+	width: 2px;
+	top: 50%;
+	right: 25px;
+	height: 10px;
+	margin-top: -9px;
+	background: #ffffff;
+}
+
+.fa-remove::before {
+	transform: rotate(45deg);
+}
+
+.fa-remove::after {
+	transform: rotate(-45deg);
+}
+/* 活动推广 */
+.why-icon,.why-icon2,.why-icon3,.why-icon4,.why-icon5,.why-icon6,.why-icon7{
+	margin-left: 10px;
+	cursor: pointer;
+}
+.whatIdDiv,.whatIdDiv2,.whatIdDiv3,.whatIdDiv4,.whatIdDiv5,.whatIdDiv6,.whatIdDiv7{
+	display: none;
+}
+/* 修正 */
+.tradeCheckDiv,
+.activeSetDiv,
+.functionSetDiv {
+	margin-left: 20px;
+}
+.fixed-table-body{
+	overflow: hidden;
+}
+.status{
+	color: red;
+}
+.status2{
+	color: #008000;
+}
+.viewOrg,.viewCourse{
+	cursor: pointer;
+}

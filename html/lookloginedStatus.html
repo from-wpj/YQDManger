@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="Cache-Control" CONTENT="no-cache">
+  <link rel="icon" href="../image/pic.ico" type="image/x-icon"/>
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/skin/default/layer.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.min.css">
+  <link rel="stylesheet" href="../css/skin/default/layer.css">
+  <link rel="stylesheet" href="../css/theme/default/laydate.css">
+  <link rel="stylesheet" href="../css/jquery.page.css">
+  <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+  <link rel="stylesheet" href="../css/lookloginedStatus.css?ver=20180731">
+  <title>个人登陆情况查询</title>
+</head>
+<body>
+  <p class="title"></p>
+  <div class="leftDiv col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+  <div class="centerDiv col-lg-6 col-md-6 col-sm-8 col-xs-12">
+    <div class="chooseDiv form-inline">
+    <p class="personArea"><span class="checkerName"></span>软件在线时长统计表</p>
+        <p class="clearfix"><span class="pull-left">时间</span><input type="text" class="form-control pull-left" id="beginTime" autocomplete="off"><input type="text" class="form-control pull-left" id="endTime" autocomplete="off"><input type="button" class="form-control pull-left" value="查询" id="searchBtn"><input type="button" class="form-control pull-right" value="统计" id="tongjiBtn"></p>
+        <div class="col-lg-12">
+            <table id="loginTable">
+                                          <thead>
+                                              <tr>
+                                                  <th data-field="createTime"></th>
+                                                  <th data-field="createTime"></th>
+                                                  <th data-field="quitTime"></th>
+                                                  <th data-field="time"></th>
+                                              </tr>
+                                          </thead>
+                                      </table>
+                                      <br>
+        </div>
+        <div class="tongjiDiv">
+              <p><span>平均每次在线时长</span><span class="loginTime"></span></p>
+              <table id="tongjiTable">
+                                          <thead>
+                                              <tr>
+                                                  <th data-field="createTime"></th>
+                                                  <th data-field="allTime"></th>
+                                                  <th data-field="cishu"></th>
+                                              </tr>
+                                          </thead>
+                                      </table>
+                                      <br>
+        </div>
+    </div>
+  </div>
+  <div class="rightDiv col-lg-3 col-md-3 col-sm-2 col-xs-0"></div>
+  <script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/bootstrap-table/1.11.1/bootstrap-table.js"></script>
+  <script type="text/javascript" src="../js/bootstrap-table-zh-CN.min.js"></script>
+  <script type="text/javascript" src="http://cdn.bootcss.com/layer/3.1.0/layer.js"></script>
+  <script type="text/javascript" src="../js/laydate.js"></script>
+  <script type="text/javascript" src="../js/change.js"></script>
+  <script type="text/javascript" src="../js/lookloginedStatus.js?ver=20181018"></script>
+</body>
+</html>
